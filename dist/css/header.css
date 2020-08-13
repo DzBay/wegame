@@ -1,0 +1,65 @@
+.headerWrap {
+  height: 80px;
+  width: 100%;
+  background-color: #191919;
+  position: relative; }
+
+.header {
+  height: 80px;
+  width: 1360px;
+  margin: 0 auto; }
+
+h1 {
+  position: absolute;
+  top: 15px;
+  left: 40px; }
+
+.header .navCenter {
+  position: absolute;
+  left: calc(50% - 260px);
+  line-height: 80px; }
+
+.header .navCenter li {
+  float: left;
+  height: 80px;
+  margin: 0 12px; }
+
+.header .navCenter a {
+  display: block;
+  height: 80px;
+  padding: 0 20px;
+  color: #8C8C8C; }
+
+.header .navCenter a:hover {
+  color: #FFFFFF;
+  background-color: #353535; }
+
+.header .navRight {
+  position: absolute;
+  height: fit-content;
+  top: 22px;
+  right: 40px; }
+
+.header .navRight li {
+  float: left;
+  margin-left: 20px; }
+
+.header .navRight a {
+  line-height: 34px;
+  height: 34px;
+  font-size: 13px;
+  display: block;
+  color: #8C8C8C; }
+
+.header .navRight a:hover {
+  color: #fff; }
+
+.header .navRight li:nth-child(2) a {
+  border: 1px solid #303030;
+  padding: 0 18px;
+  border-radius: 18px; }
+
+.header .navRight li:nth-child(2) a:hover {
+  background-color: #ffc800;
+  color: #333;
+  border-color: #191919; }

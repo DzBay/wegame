@@ -1,0 +1,486 @@
+@charset "utf-8";
+// 公共样式
+// 栏目标题
+.title{
+    font-size: 28px;
+    color:#3C3C3C;
+    height:70px;
+    line-height: 70px;
+}
+// 游戏，活动tag
+.tag{
+    color:#fff;
+    height:20px;
+    line-height: 20px;
+    padding:0 10px;
+    background: url(http://wegame.gtimg.com/g.55555-r.c4663/rail/images/tag-svg-bg-game.30862e2a.svg) no-repeat;
+}
+// 轮播图切换按钮
+.prev{
+    width:30px;
+    height:68px;
+    position: absolute;
+    z-index: 10;
+    background: rgba(0,0,0,.15);
+    border-radius: 4px;
+    outline: none
+}
+.prev::after{
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 20px;
+        display: block;
+        top: 50%;
+        margin-top: -10px;
+        opacity: .8;
+        background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat;
+}
+.next{
+    width:30px;
+    height:68px;
+    position: absolute;
+    z-index: 10;
+    background: rgba(0,0,0,.15);
+    border-radius: 4px;
+    outline: none;
+}
+.next::after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 20px;
+    display: block;
+    top: 50%;
+    margin-top: -10px;
+    opacity: .8;
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat;
+}
+body{
+    background: url(../images/store-bg-20200722.jpg);
+}
+/* 顶部top */
+.topWrap{
+    width:100%;
+    height:50px;
+    background-color: #FFF;
+}
+.top{
+    width:1000px;
+    height:50px;
+    margin:0 auto;
+    position: relative;
+}
+/* 顶部导航nav */
+.top_nav1{
+    position: absolute;
+    left:0;
+}
+.top_nav1 li{
+    float: left;
+    height:50px;
+    margin-right:8px;
+    position: relative;
+}
+.top_nav1 li>a{
+    display: block;
+    height:50px;
+    line-height: 50px;
+    color:#3C3C3C;
+    font-size: 15px;
+    padding:0 15px;
+}
+.top_nav1 li:last-child>a{
+    padding:0 38px 0 19px;
+}
+.top_nav1 a:hover{
+    background-color: #F4F4F4;
+}
+/* 顶部二级导航 */
+.top_nav2{
+    width:100%;
+    position: absolute;
+    top:50px;
+    background-color: #FFF;
+    display: none;
+}
+.top_nav2 a{
+    display: block;
+    height:40px;
+    line-height: 40px;
+    color:#3C3C3C;
+    font-size: 14px;
+    z-index: 10;
+    padding:0 19px;
+}
+.top_nav1 li:hover .top_nav2{
+    display: block;
+}
+/* 顶部分类sort */
+.top_sort{
+    height:50px;
+    line-height: 50px;
+    position: absolute;
+    left:415px;
+}
+.top_sort li{
+    float: left;
+}
+.top_sort li:nth-of-type(even){
+    height:14px;
+    width:1px;
+    background-color: #3C3C3C;
+    position: relative;
+    top:18px;
+    margin:0 15px;
+}
+.top_sort a{
+    display: block;
+    height:50px;
+    color:#3C3C3C;
+    font-size: 13px;
+    transition: .5s;
+}
+.top_sort .imp{
+    color: #f69c00;
+    font-weight: bolder;
+}
+.top_sort li:hover a{
+    color:#f69c00;
+}
+/* 顶部搜索栏 */
+.top_searchWrap{
+    width:240px;
+    height:30px;
+    position: absolute;
+    top:9px;
+    right:0;
+}
+.top_search{
+    width:238px;
+    height:30px;
+    border:1px solid #f69c00;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.top_search input{
+    width:175px;
+    height:30px;
+    padding:0 0 0 15px;
+    float: left;
+}
+.top_search button{
+    width:48px;
+    height:30px;
+    border: 0;
+    background-color: #FFE38F;
+    float: right;
+    padding:0;
+}
+.top_search button:hover{
+    background-color: #FF9700;
+    transition: .5s;
+}
+.top_search button i{
+    width:24px;
+    height:24px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+.top_hot{
+    width:100%;
+    border: 1px solid #BFBFBF;
+    position: absolute;
+    top:20px;
+    background-color: #fff;
+    padding:5px 0;
+    z-index: 9;
+    display: none;
+    opacity: 0;
+}
+.top_hot p{
+    padding:0 5px 0 18px;
+    height:30px;
+    line-height: 30px;
+    font-size: 14px;
+    color:#959595;
+}
+.top_hot ul{
+    padding:0 5px 0 18px;
+}
+.top_hot li{
+    height:30px;
+    line-height: 30px;
+    color:#333;
+    font-size: 12px;
+}
+.top_hot li:hover{
+    background-color: #F4F4F4;
+}
+.top_hot i{
+    display: inline-block;
+    vertical-align: top;
+    width:14px;
+    height:14px;
+    background-image:url(../images/tophot.png);
+    margin:8px 5px 0 0;
+}
+.top_hot li:nth-of-type(2) i{
+    background-position-y: -15px;
+}
+.top_hot li:nth-of-type(3) i{
+    background-position-y: -30px;
+}
+.top_hot li:nth-of-type(4) i{
+    background-position-y: -45px;
+}
+.top_hot li:nth-of-type(5) i{
+    background-position-y: -60px;
+}
+.top_hot img{
+    vertical-align: top;
+    margin:8px 0 0 5px;
+}
+/* 轮播图banner */
+.bannerWrap{
+    width:1000px;
+    height:390px;
+    margin:0 auto 10px;
+    position: relative;
+    overflow: hidden;
+}
+/* .banner,.banner ul,.banner li, .banner a{
+    width:1360px;
+    height:450px;
+    overflow: hidden;
+}
+.banner ul{
+    position: relative;
+}
+.banner li{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.banner img{
+    opacity:0;
+} */
+.banner_img{
+    width:1400px;
+    height:390px;
+    margin-left:-200px;
+}
+.bannerWrap .banner_text{
+    width:214px;
+    height:390px;
+    position: absolute;
+    top:0;
+    right: 0;
+    background: rgba(15,15,35,.4);
+    z-index: 8;
+}
+.banner_text_li{
+    width:194px;
+    height:38px;
+    padding:15px 0 0 20px;
+    color:#e0e0e0;
+    font-size: 14px;
+    cursor: pointer;
+    .tit{
+        display: inline-block;
+        font-weight: 900;
+        line-height: 20px;
+        margin-left:5px;
+    }
+    .con{
+        margin-top:7px;
+        display: none;
+    }
+    .tag{
+        display: none;
+    }
+}
+.banner_text .active{
+    height:60px;
+    padding:12px 0 0 20px;
+    .con{
+        display: block;
+    }
+    .tag{
+        display: inline-block;
+    }
+}
+.banner_text .active_game{
+    background-color: rgba(0,178,250,.4);
+    .tit{
+        color: #00B2FA;
+    }
+    .tag{
+        background: url(http://wegame.gtimg.com/g.55555-r.c4663/rail/images/tag-svg-bg-game.30862e2a.svg) no-repeat;
+    }
+}
+.banner_text .active_act{
+    background-color: rgba(255,140,0,.4);
+    .tit{
+       color: #FF8C00; 
+    }
+    .tag{
+        background: url(http://wegame.gtimg.com/g.55555-r.c4663/rail/images/tag-svg-bg-act.d900eef7.svg) no-repeat;
+    }
+}
+// 热点预告foreshow
+.foreshowWrap{
+    width:1000px;
+    margin:0 auto 20px;
+    height:470px;
+    position: relative;
+    .foreshow{
+        width:1000px;
+        height:400px;
+        .foreshow_list{
+            height:400px;
+            li{
+                width:184px;
+                height:400px;
+                float: left;
+            }
+            li::before{
+                content: "";
+                width: 4px;
+                height: 4px;
+                background-color: #ffb300;
+                position: absolute;
+                left: 50%;
+                top: 53px;
+                border-radius: 50%;
+                z-index: 12;
+                border-right:6px solid #eee;
+                border-left:6px solid #eee;
+            }
+            li::after{
+                content: "";
+                position: absolute;
+                top: 54px;
+                left: 0;
+                right: -20px;
+                border-top: 2px solid #ffb300;
+                z-index: 10;
+            }
+            p{
+                color:#3C3C3C;
+                font-size: 15px;
+                line-height: 20px;
+                font-weight: bolder;
+            }
+            span{
+                color:#757575;
+                font-size: 13px;
+                line-height: 20px;
+                display: block;
+            }
+        }
+    }
+    .prev{
+        top: 280px;
+        left:-40px;
+    }
+    .next{
+        top: 280px;
+        right:-40px;
+    }
+}
+.foreshow_list{
+    .text{
+        height:78px;
+        text-align: center;
+    }
+    a{
+        display: block;
+        width:184px;
+        height:322px;
+        overflow: hidden;
+        img{
+            width:184px;
+            height:242px;
+            vertical-align: middle;
+        }
+        .brief{
+            height:100px;
+            background-color: #FFF;
+            padding:20px 16px 0;
+            position: relative;
+            top:0px;
+            .tag{
+                position: absolute;
+                top:-12px;
+                left:15px;
+            }
+            .btn{
+                width:184px;
+                height:40px;
+                border-top:1px solid #e4e4e4;
+                position: absolute;
+                bottom: 0;
+                left:0;
+                span{
+                    width:92px;
+                    height:40px;
+                    line-height: 40px;
+                    text-align: center;
+                    float: left;
+                    cursor: pointer;
+                }
+                span:hover{
+                    color:#3c3c3c;
+                    background-color: #f4f4f4;
+                }
+            }
+            .btn::after{
+                content: "";
+                width:1px;
+                height:40px;
+                background-color: #e4e4e4;
+                position: absolute;
+                top:0;
+                left:92px;
+            }
+        }
+    }
+    a:hover{
+        .brief{
+            height:100px;
+            top:-40px;
+            transition: .2s;
+        }
+    }
+}
+// rank排行榜
+.rankWrap{
+    width:1000px;
+    height:780px;
+    margin:0 auto 20px;
+    position: relative;
+    .rank{
+        height:710px;
+        overflow: hidden;
+        .rank_list{
+            height:710px;
+            li{
+                width:320px;
+                height:710px;
+                float: left;
+                background-color: #f69c00;
+            }
+        }
+    }
+    .prev{
+        height:110px;
+        left:-40px;
+    }
+    .next{
+        height:110px;
+        right:-40px;
+    }
+}
