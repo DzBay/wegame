@@ -331,26 +331,26 @@ body {
         width: 184px;
         height: 400px;
         float: left; }
-      .foreshowWrap .foreshow .foreshow_list li::before {
-        content: "";
-        width: 4px;
-        height: 4px;
-        background-color: #ffb300;
-        position: absolute;
-        left: 50%;
-        top: 53px;
-        border-radius: 50%;
-        z-index: 12;
-        border-right: 6px solid #eee;
-        border-left: 6px solid #eee; }
-      .foreshowWrap .foreshow .foreshow_list li::after {
-        content: "";
-        position: absolute;
-        top: 54px;
-        left: 0;
-        right: -20px;
-        border-top: 2px solid #ffb300;
-        z-index: 10; }
+        .foreshowWrap .foreshow .foreshow_list li::before {
+          content: "";
+          width: 4px;
+          height: 4px;
+          background-color: #ffb300;
+          position: absolute;
+          left: 50%;
+          top: 53px;
+          border-radius: 50%;
+          z-index: 12;
+          border-right: 6px solid #eee;
+          border-left: 6px solid #eee; }
+        .foreshowWrap .foreshow .foreshow_list li::after {
+          content: "";
+          position: absolute;
+          top: 54px;
+          left: 0;
+          right: -20px;
+          border-top: 2px solid #ffb300;
+          z-index: 10; }
       .foreshowWrap .foreshow .foreshow_list p {
         color: #3C3C3C;
         font-size: 15px;
@@ -367,6 +367,59 @@ body {
   .foreshowWrap .next {
     top: 280px;
     right: -40px; }
+  .foreshowWrap .detail_wrap {
+    width: 224px;
+    min-height: 255px; }
+    .foreshowWrap .detail_wrap .detail {
+      width: 224px;
+      min-height: 255px;
+      position: absolute;
+      top: 145px;
+      background-color: #fff;
+      z-index: 15;
+      box-shadow: 5px 5px 5px rgba(136, 136, 136, 0.5);
+      display: none; }
+      .foreshowWrap .detail_wrap .detail .detail_banner {
+        width: 218px;
+        height: 124px;
+        border: 3px solid #fff;
+        position: relative; }
+        .foreshowWrap .detail_wrap .detail .detail_banner img {
+          width: 218px;
+          height: 124px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: none; }
+      .foreshowWrap .detail_wrap .detail .detail_text {
+        padding: 0 20px;
+        text-align: left; }
+        .foreshowWrap .detail_wrap .detail .detail_text div {
+          padding: 0 0 0 24px;
+          color: #757575;
+          font-size: 13px;
+          line-height: 20px;
+          position: relative;
+          margin-bottom: 8px; }
+        .foreshowWrap .detail_wrap .detail .detail_text i {
+          display: block;
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          top: 2px;
+          left: 0; }
+        .foreshowWrap .detail_wrap .detail .detail_text .gameTit {
+          font-size: 18px;
+          height: 40px;
+          line-height: 40px;
+          font-weight: bolder;
+          color: #3C3C3C; }
+        .foreshowWrap .detail_wrap .detail .detail_text .upTime i {
+          background: url(../images/showdetail_05.jpg); }
+        .foreshowWrap .detail_wrap .detail .detail_text .gameEsti i {
+          background: url(../images/showdetail_05.jpg) 0 -27px; }
+        .foreshowWrap .detail_wrap .detail .detail_text .gameTags i {
+          background: url(../images/showdetail_05.jpg) 0 -54px; }
 
 .foreshow_list .text {
   height: 78px;
@@ -405,28 +458,50 @@ body {
         text-align: center;
         float: left;
         cursor: pointer; }
-      .foreshow_list a .brief .btn span:hover {
-        color: #3c3c3c;
-        background-color: #f4f4f4; }
-    .foreshow_list a .brief .btn::after {
-      content: "";
-      width: 1px;
-      height: 40px;
-      background-color: #e4e4e4;
-      position: absolute;
-      top: 0;
-      left: 92px; }
-
-.foreshow_list a:hover .brief {
-  height: 100px;
-  top: -40px;
-  transition: .2s; }
+        .foreshow_list a .brief .btn span:hover {
+          color: #3c3c3c;
+          background-color: #f4f4f4; }
+      .foreshow_list a .brief .btn::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background-color: #e4e4e4;
+        position: absolute;
+        top: 0;
+        left: 92px; }
+  .foreshow_list a:hover .brief {
+    height: 100px;
+    top: -40px;
+    transition: .2s; }
 
 .rankWrap {
   width: 1000px;
   height: 780px;
   margin: 0 auto 20px;
   position: relative; }
+  .rankWrap .rank_tit {
+    height: 70px; }
+    .rankWrap .rank_tit .title {
+      float: left; }
+    .rankWrap .rank_tit .rank_nav {
+      height: 55px;
+      margin-left: 30px;
+      padding-top: 15px;
+      float: left; }
+      .rankWrap .rank_tit .rank_nav li {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        color: #3C3C3C;
+        font-size: 16px;
+        display: block;
+        margin: 0 14px;
+        border-bottom: 4px solid rgba(255, 179, 0, 0);
+        cursor: pointer;
+        transition: .5s; }
+        .rankWrap .rank_tit .rank_nav li.show {
+          font-weight: bolder;
+          border-bottom: 4px solid #FFB300; }
   .rankWrap .rank {
     height: 710px;
     overflow: hidden; }
