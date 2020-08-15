@@ -39,7 +39,7 @@ task('sass', async ()=>{
 task('script', async ()=>{
   src('./script/*.js')
   // .pipe(load.rev())
-  .pipe(load.babel({presets: ['@babel/env']}))
+  // .pipe(load.babel({presets: ['@babel/env']}))
   .pipe(dest('./dist/script'))
   // .pipe(load.rev.manifest())
   // .pipe(dest('./rev/js'))

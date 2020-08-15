@@ -1,5 +1,13 @@
 @charset "utf-8";
 // 公共样式
+span{
+    color:#757575;
+    font-size:12px;
+}
+// 按比例放大
+a:hover .pic img{
+    transform: scale(1.1);
+}
 // 栏目标题
 .title{
     font-size: 28px;
@@ -21,9 +29,12 @@
     height:68px;
     position: absolute;
     z-index: 10;
+    top:50%;
+    left:-40px;
     background: rgba(0,0,0,.15);
     border-radius: 4px;
-    outline: none
+    outline: none;
+    cursor: pointer;
 }
 .prev::after{
         position: absolute;
@@ -32,6 +43,7 @@
         height: 20px;
         display: block;
         top: 50%;
+        left:10px;
         margin-top: -10px;
         opacity: .8;
         background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat;
@@ -41,9 +53,12 @@
     height:68px;
     position: absolute;
     z-index: 10;
+    top:50%;
+    right:-40px;
     background: rgba(0,0,0,.15);
     border-radius: 4px;
     outline: none;
+    cursor: pointer;
 }
 .next::after{
     position: absolute;
@@ -52,10 +67,82 @@
     height: 20px;
     display: block;
     top: 50%;
+    right:10px;
     margin-top: -10px;
     opacity: .8;
     background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat;
 }
+// 详情缩略图detail
+.detail_wrap{
+    .detail{
+        width:224px;
+        min-height: 255px;
+        position: absolute;
+        background-color: #fff;
+        z-index: 15;
+        box-shadow: 5px 5px 5px rgba($color: #888888, $alpha: .5);
+        display: none;
+        .detail_banner{
+            width:218px;
+            height:124px;
+            border:3px solid #fff;
+            position: relative;
+            img{
+                width:218px;
+                height:124px;
+                position: absolute;
+                top:0;
+                left:0;
+                display: none;
+            }
+        }
+        .detail_text{
+            padding:0 20px;
+            text-align: left;
+            div{
+                padding:0 0 0 24px;
+                color: #757575;
+                font-size: 13px;
+                line-height: 20px;
+                position: relative;
+                margin-bottom: 8px;
+            }
+            i{
+                display: block;
+                width:14px;
+                height:14px;
+                position: absolute;
+                top:2px;
+                left:0;
+            }
+            .gameTit{
+                font-size: 18px;
+                height:40px;
+                line-height: 40px;
+                font-weight: bolder;
+                color: #3C3C3C;
+            }
+            .upTime{
+                i{
+                    background: url(../images/showdetail_05.jpg);
+                }
+            }
+            .gameEsti{
+                i{
+                    background: url(../images/showdetail_05.jpg) 0 -27px;
+                }
+            }
+            .gameTags{
+                i{
+                    background: url(../images/showdetail_05.jpg) 0 -54px;
+                }
+            }
+        }
+    }
+}
+
+
+
 body{
     background: url(../images/store-bg-20200722.jpg);
 }
@@ -391,74 +478,9 @@ body{
         right:-40px;
     }
     .detail_wrap{
-        width:224px;
-        min-height: 255px;
         .detail{
-            width:224px;
-            min-height: 255px;
-            position: absolute;
             top:145px;
             // left:188px;
-            background-color: #fff;
-            z-index: 15;
-            box-shadow: 5px 5px 5px rgba($color: #888888, $alpha: .5);
-            display: none;
-            .detail_banner{
-                width:218px;
-                height:124px;
-                border:3px solid #fff;
-                position: relative;
-                img{
-                    width:218px;
-                    height:124px;
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    display: none;
-                }
-            }
-            .detail_text{
-                padding:0 20px;
-                text-align: left;
-                div{
-                    padding:0 0 0 24px;
-                    color: #757575;
-                    font-size: 13px;
-                    line-height: 20px;
-                    position: relative;
-                    margin-bottom: 8px;
-                }
-                i{
-                    display: block;
-                    width:14px;
-                    height:14px;
-                    position: absolute;
-                    top:2px;
-                    left:0;
-                }
-                .gameTit{
-                    font-size: 18px;
-                    height:40px;
-                    line-height: 40px;
-                    font-weight: bolder;
-                    color: #3C3C3C;
-                }
-                .upTime{
-                    i{
-                        background: url(../images/showdetail_05.jpg);
-                    }
-                }
-                .gameEsti{
-                    i{
-                        background: url(../images/showdetail_05.jpg) 0 -27px;
-                    }
-                }
-                .gameTags{
-                    i{
-                        background: url(../images/showdetail_05.jpg) 0 -54px;
-                    }
-                }
-            }
         }
     }
 }
@@ -571,16 +593,344 @@ body{
                 width:320px;
                 height:710px;
                 float: left;
-                background-color: #f69c00;
+                background:#fff;
+                .tit{
+                    height:25px;
+                    padding:16px 16px 14px;
+                    h4{
+                        float: left;
+                        color:#3c3c3c;
+                        font-size: 18px;
+                        line-height: 25px;
+                        font-weight: bolder;
+                    }
+                    span{
+                        height:24px;
+                        width:24px;
+                        float: left;
+                        background: url("../images/icon-question-24.c966a1fd.png");
+                        margin-left:10px;
+                    }
+                }
+                .gameList{
+                    .item{
+                        height:54px;
+                        padding:20px 0;
+                        transition: .3s;
+                        &:hover{
+                            background-color:#f4f4f4;
+                        }
+                        i{
+                            float: left;
+                            width:34px;
+                            height:34px;
+                            margin:10px 0;
+                            background-image: url(../images/ranktag_02.jpg);
+                        }
+                        div{
+                            height:54px;
+                            img{
+                                height:54px;
+                                width:92px;
+                                float: left;
+                            }
+                            strong{
+                                float: left;
+                                margin-left:20px;
+                                p{
+                                    font-size: 15px;
+                                    font-weight: bolder;
+                                    line-height: 28px;
+                                    color:#3C3C3C;
+                                }
+                                span{
+                                    font-size: 14px;
+                                    color:#787878;
+                                    line-height: 28px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-    .prev{
-        height:110px;
-        left:-40px;
+    .detail_wrap{
+        .detail{
+            // top:145px;
+            // right:188px;
+        }
     }
-    .next{
-        height:110px;
-        right:-40px;
+}
+// 测试专区BT
+.BTWrap{
+    width:1000px;
+    height:530px;
+    margin:0 auto 20px;
+    .BT{
+        height:460px;
+        background:url("../images/tzone-bg-null.bd944fea.jpg"),no-repeat 50% 50%;
+        position: relative;
+        .tit{
+            height:125px;
+            padding:30px 40px 0;
+            h3{
+                font-size:36px;
+                color:#FFF;
+                line-height: 54px;
+                font-weight: bolder;
+            }
+            p{
+                font-size:13px;
+                line-height: 20px;
+                height:40px;
+                width:380px;
+                white-space: normal;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color:rgba($color: #FFF, $alpha: .6);
+            }
+            a{
+                position: absolute;
+                top:80px;
+                right:50px;
+                width:178px;
+                height:40px;
+                line-height: 40px;
+                text-align: center;
+                font-size:16px;
+                color:#000;
+                border-radius: 2px;
+                font-weight: bold;
+                background: transparent linear-gradient(280deg,#ffca28,#ffe082) 0 0 no-repeat padding-box;
+            }
+        }
+        .con{
+            height:300px;
+            // 公共样式
+            .txt{
+                h5{
+                    height:22px;
+                    line-height: 22px;
+                    font-weight: bold;
+                    font-size: 15px;
+                    color: #3c3c3c;
+                    padding:6px 0 8px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                p{
+                    color:#757575;
+                    font-size:13px;
+                    line-height: 20px;
+                }
+            }
+            .first{
+                display: block;
+                width:470px;
+                height:285px;
+                margin:0 20px;
+                float: left;
+                background-color: #fff;
+                .pic{
+                    overflow: hidden;
+                    width:200px;
+                    height:285px;
+                    float: left;
+                    img{
+                        display: block;
+                        width:200px;
+                        height:285px;
+                        transition: .2s;
+                    }
+                }
+                .txt{
+                    padding:11px 20px 0;
+                    width:230px;
+                    float: left;
+                    overflow: hidden;
+                    .letter{
+                        height:100px;
+                        margin:20px 0 30px;
+                        background:#F4F4F4;
+                        padding:12px 15px;
+                        font-size: 13px;
+                        color:#757575;
+                        strong{
+                            display: block;
+                            height:72px;
+                            overflow: hidden;
+                            margin-bottom: 6px;
+                        }
+                        span{
+                            height: 22px;
+                            i{
+                                height:22px;
+                                width:100px;
+                                float: left;
+                                line-height: 22px;
+                            }
+                            i:last-of-type{
+                                text-align: right;
+                            }
+                        }
+                    }
+                    .mark{
+                        height:14px;
+                        display: block;
+                        text-align: center;
+                        line-height: 14px;
+                        border-radius: 7px;
+                        background:#F4F4F4;
+                        span{
+                            color:#757575;
+                            font-size:12px;
+                        }
+                    }
+                }
+            }
+            .other{
+                display: block;
+                width:225px;
+                height:284px;
+                margin-right:20px;
+                float: left;
+                background-color: #fff;
+                .pic{
+                    height:126px;
+                    overflow: hidden;
+                    img{
+                        width:225px;
+                        height:126px;
+                        transition: .3s;
+                    }
+                }
+                .txt{
+                    padding:11px 15px 0;
+                    overflow: hidden;
+                    div{
+                        height:50px;
+                        line-height: 50px;
+                        text-align: center;
+                        border-top: 1px solid #e4e4e4;
+                        margin-top:20px;
+                    }
+                }
+            }
+        }
+    }
+}
+// update最近更新
+.updateWrap{
+    margin:0 auto 20px;
+    width:1000px;
+    height:472px;
+    position: relative;
+    .update{
+        width:1000px;
+        height:419px;
+        overflow:hidden;
+        .updateList{
+            width:8000px;
+            height:402px;
+            li{
+                width:340px;
+                height:402px;
+                float: left;
+                >a{
+                    display: block;
+                    width:320px;
+                    height:402px;
+                    background: #FFF;
+                    margin-right:20px;
+                    .pic{
+                        width:320px;
+                        height:180px;
+                        overflow: hidden;
+                        img{
+                            width:320px;
+                            height:180px;
+                            transition: .3s;
+                        }
+                    }
+                    .txt{
+                        padding:16px 16px 0;
+                        height:202px;
+                        .tit{
+                            height:42px;
+                            margin-bottom: 15px;
+                            img{
+                                width:60px;
+                                height:80px;
+                                border:2px solid #fff;
+                                margin:-40px 8px 0 0;
+                                float: left;
+                                z-index: 1;
+                                position: relative;
+                            }
+                            .intro{
+                                width:215px;
+                                height:42px;
+                                float: left;
+                                a{
+                                    color:#3c3c3c;
+                                    font-size:14px;
+                                    line-height: 20px;
+                                    margin-bottom: 5px;
+                                    display: block;
+                                    span{
+                                        color:#757575;
+                                        float: right;
+                                    }
+                                }
+                                span{
+                                    display: block;
+                                }
+                            }
+                        }
+                        .con{
+                            h6{
+                                height:20px;
+                                line-height: 20px;
+                                font-weight: bold;
+                                font-size: 16px;
+                                color:#3c3c3c;
+                                margin-bottom: 12px;
+                            }
+                            p{
+                                height:64px;
+                                overflow: hidden;
+                                color:#757575;
+                                font-size:14px;
+                                margin-bottom: 10px;
+                            }
+                            .time{
+                                height:42px;
+                                line-height: 42px;
+                                border-top:1px solid #e4e4e4;
+                                color:#757575;
+                                font-size:13px;
+                                & i:last-child{
+                                    float:right;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 推荐模块
+.recommedWrap{
+    width:1000px;
+    height:480px;
+    margin:0 auto 50px;
+    .recommed{
+        height:410px;
+        background:url("../images/oss_5f0ffe2ee643c.png") no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed; 
     }
 }

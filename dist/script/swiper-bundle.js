@@ -1,7 +1,3 @@
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /**
  * Swiper 6.1.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -13,10 +9,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
  *
  * Released on: July 31, 2020
  */
+
 (function (global, factory) {
-  (typeof exports === "undefined" ? "undefined" : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = global || self, global.Swiper = factory());
-})(void 0, function () {
-  'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = global || self, global.Swiper = factory());
+}(this, (function () { 'use strict';
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -51,6 +49,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     return _extends.apply(this, arguments);
   }
+
   /**
    * SSR Window 3.0.0-alpha.4
    * Better handling for window object in SSR environment
@@ -64,10 +63,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
    */
 
   /* eslint-disable no-param-reassign */
-
-
   function isObject(obj) {
-    return obj !== null && _typeof(obj) === 'object' && 'constructor' in obj && obj.constructor === Object;
+    return obj !== null && typeof obj === 'object' && 'constructor' in obj && obj.constructor === Object;
   }
 
   function extend(target, src) {
@@ -206,6 +203,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     extend(win, ssrWindow);
     return win;
   }
+
   /**
    * Dom7 3.0.0-alpha.7
    * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
@@ -217,7 +215,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
    *
    * Released on: July 14, 2020
    */
-
 
   function _inheritsLoose(subClass, superClass) {
     subClass.prototype = Object.create(superClass.prototype);
@@ -1263,7 +1260,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   function isObject$1(o) {
-    return _typeof(o) === 'object' && o !== null && o.constructor && o.constructor === Object;
+    return typeof o === 'object' && o !== null && o.constructor && o.constructor === Object;
   }
 
   function extend$1() {
@@ -1468,6 +1465,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Observer = {
     attach: function attach(target, options) {
       if (options === void 0) {
@@ -1556,6 +1554,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var modular = {
     useParams: function useParams(instanceParams) {
       var instance = this;
@@ -1592,8 +1591,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
     }
   };
-  /* eslint-disable no-underscore-dangle */
 
+  /* eslint-disable no-underscore-dangle */
   var eventsEmitter = {
     on: function on(events, handler, priority) {
       var self = this;
@@ -2843,9 +2842,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     return swiper.slideTo(newIndex, speed, runCallbacks, internal);
   }
+
   /* eslint no-unused-vars: "off" */
-
-
   function slideNext(speed, runCallbacks, internal) {
     if (speed === void 0) {
       speed = this.params.speed;
@@ -2869,9 +2867,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     return swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
   }
+
   /* eslint no-unused-vars: "off" */
-
-
   function slidePrev(speed, runCallbacks, internal) {
     if (speed === void 0) {
       speed = this.params.speed;
@@ -2924,9 +2921,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
   }
+
   /* eslint no-unused-vars: "off" */
-
-
   function slideReset(speed, runCallbacks, internal) {
     if (speed === void 0) {
       speed = this.params.speed;
@@ -2939,9 +2935,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var swiper = this;
     return swiper.slideTo(swiper.activeIndex, speed, runCallbacks, internal);
   }
+
   /* eslint no-unused-vars: "off" */
-
-
   function slideToClosest(speed, runCallbacks, internal, threshold) {
     if (speed === void 0) {
       speed = this.params.speed;
@@ -3177,7 +3172,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       swiper.loopDestroy();
     }
 
-    if (_typeof(slides) === 'object' && 'length' in slides) {
+    if (typeof slides === 'object' && 'length' in slides) {
       for (var i = 0; i < slides.length; i += 1) {
         if (slides[i]) $wrapperEl.append(slides[i]);
       }
@@ -3206,7 +3201,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     var newActiveIndex = activeIndex + 1;
 
-    if (_typeof(slides) === 'object' && 'length' in slides) {
+    if (typeof slides === 'object' && 'length' in slides) {
       for (var i = 0; i < slides.length; i += 1) {
         if (slides[i]) $wrapperEl.prepend(slides[i]);
       }
@@ -3261,7 +3256,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       slidesBuffer.unshift(currentSlide);
     }
 
-    if (_typeof(slides) === 'object' && 'length' in slides) {
+    if (typeof slides === 'object' && 'length' in slides) {
       for (var _i = 0; _i < slides.length; _i += 1) {
         if (slides[_i]) $wrapperEl.append(slides[_i]);
       }
@@ -3306,7 +3301,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var newActiveIndex = activeIndexBuffer;
     var indexToRemove;
 
-    if (_typeof(slidesIndexes) === 'object' && 'length' in slidesIndexes) {
+    if (typeof slidesIndexes === 'object' && 'length' in slidesIndexes) {
       for (var i = 0; i < slidesIndexes.length; i += 1) {
         indexToRemove = slidesIndexes[i];
         if (swiper.slides[indexToRemove]) swiper.slides.eq(indexToRemove).remove();
@@ -4461,6 +4456,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var checkOverflow$1 = {
     checkOverflow: checkOverflow
   };
+
   var defaults = {
     init: true,
     direction: 'horizontal',
@@ -4586,6 +4582,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     // Internals
     _emitClasses: false
   };
+
   var prototypes = {
     modular: modular,
     eventsEmitter: eventsEmitter,
@@ -4650,7 +4647,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (module.params) {
           var moduleParamName = Object.keys(module.params)[0];
           var moduleParams = module.params[moduleParamName];
-          if (_typeof(moduleParams) !== 'object' || moduleParams === null) return;
+          if (typeof moduleParams !== 'object' || moduleParams === null) return;
           if (!(moduleParamName in params && 'enabled' in moduleParams)) return;
 
           if (params[moduleParamName] === true) {
@@ -4659,7 +4656,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             };
           }
 
-          if (_typeof(params[moduleParamName]) === 'object' && !('enabled' in params[moduleParamName])) {
+          if (typeof params[moduleParamName] === 'object' && !('enabled' in params[moduleParamName])) {
             params[moduleParamName].enabled = true;
           }
 
@@ -5110,6 +5107,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }();
 
   Swiper.use([Resize, Observer$1]);
+
   var Virtual = {
     update: function update(force) {
       var swiper = this;
@@ -5245,7 +5243,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     appendSlide: function appendSlide(slides) {
       var swiper = this;
 
-      if (_typeof(slides) === 'object' && 'length' in slides) {
+      if (typeof slides === 'object' && 'length' in slides) {
         for (var i = 0; i < slides.length; i += 1) {
           if (slides[i]) swiper.virtual.slides.push(slides[i]);
         }
@@ -5376,6 +5374,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Keyboard = {
     handle: function handle(event) {
       var swiper = this;
@@ -5954,6 +5953,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Navigation = {
     update: function update() {
       // Update Navigation Buttons
@@ -6114,6 +6114,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Pagination = {
     update: function update() {
       // Render || Update Pagination bullets/items
@@ -6467,6 +6468,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Scrollbar = {
     setTranslate: function setTranslate() {
       var swiper = this;
@@ -6807,6 +6809,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Parallax = {
     setTransform: function setTransform(el, progress) {
       var swiper = this;
@@ -6924,6 +6927,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Zoom = {
     // Calc Scale From Multi-touches
     getDistanceBetweenTouches: function getDistanceBetweenTouches(e) {
@@ -7207,10 +7211,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         zoom.out();
       } else {
         // Zoom In
-        zoom["in"](e);
+        zoom.in(e);
       }
     },
-    "in": function _in(e) {
+    in: function _in(e) {
       var swiper = this;
       var zoom = swiper.zoom;
       var params = swiper.params.zoom;
@@ -7516,6 +7520,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Lazy = {
     loadInSlide: function loadInSlide(index, loadInDuplicate) {
       if (loadInDuplicate === void 0) {
@@ -7739,6 +7744,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Controller = {
     LinearSpline: function LinearSpline(x, y) {
       var binarySearch = function search() {
@@ -7932,6 +7938,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var A11y = {
     makeElFocusable: function makeElFocusable($el) {
       $el.attr('tabIndex', '0');
@@ -8146,6 +8153,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var History = {
     init: function init() {
       var swiper = this;
@@ -8296,6 +8304,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var HashNavigation = {
     onHashCange: function onHashCange() {
       var swiper = this;
@@ -8401,6 +8410,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Autoplay = {
     run: function run() {
       var swiper = this;
@@ -8572,6 +8582,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Fade = {
     setTranslate: function setTranslate() {
       var swiper = this;
@@ -8655,6 +8666,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Cube = {
     setTranslate: function setTranslate() {
       var swiper = this;
@@ -8845,6 +8857,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Flip = {
     setTranslate: function setTranslate() {
       var swiper = this;
@@ -8964,6 +8977,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Coverflow = {
     setTranslate: function setTranslate() {
       var swiper = this;
@@ -9068,6 +9082,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
+
   var Thumbs = {
     init: function init() {
       var swiper = this;
@@ -9265,9 +9280,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       }
     }
-  }; // Swiper Class
+  };
 
+  // Swiper Class
   var components = [Virtual$1, Keyboard$1, Mousewheel$1, Navigation$1, Pagination$1, Scrollbar$1, Parallax$1, Zoom$1, Lazy$1, Controller$1, A11y$1, History$1, HashNavigation$1, Autoplay$1, EffectFade, EffectCube, EffectFlip, EffectCoverflow, Thumbs$1];
   Swiper.use(components);
+
   return Swiper;
-});
+
+})));
+//# sourceMappingURL=swiper-bundle.js.map

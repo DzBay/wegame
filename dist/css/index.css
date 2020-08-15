@@ -1,4 +1,11 @@
 @charset "UTF-8";
+span {
+  color: #757575;
+  font-size: 12px; }
+
+a:hover .pic img {
+  transform: scale(1.1); }
+
 .title {
   font-size: 28px;
   color: #3C3C3C;
@@ -17,9 +24,12 @@
   height: 68px;
   position: absolute;
   z-index: 10;
+  top: 50%;
+  left: -40px;
   background: rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  outline: none; }
+  outline: none;
+  cursor: pointer; }
 
 .prev::after {
   position: absolute;
@@ -28,6 +38,7 @@
   height: 20px;
   display: block;
   top: 50%;
+  left: 10px;
   margin-top: -10px;
   opacity: .8;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat; }
@@ -37,9 +48,12 @@
   height: 68px;
   position: absolute;
   z-index: 10;
+  top: 50%;
+  right: -40px;
   background: rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  outline: none; }
+  outline: none;
+  cursor: pointer; }
 
 .next::after {
   position: absolute;
@@ -48,9 +62,60 @@
   height: 20px;
   display: block;
   top: 50%;
+  right: 10px;
   margin-top: -10px;
   opacity: .8;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat; }
+
+.detail_wrap .detail {
+  width: 224px;
+  min-height: 255px;
+  position: absolute;
+  background-color: #fff;
+  z-index: 15;
+  box-shadow: 5px 5px 5px rgba(136, 136, 136, 0.5);
+  display: none; }
+  .detail_wrap .detail .detail_banner {
+    width: 218px;
+    height: 124px;
+    border: 3px solid #fff;
+    position: relative; }
+    .detail_wrap .detail .detail_banner img {
+      width: 218px;
+      height: 124px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none; }
+  .detail_wrap .detail .detail_text {
+    padding: 0 20px;
+    text-align: left; }
+    .detail_wrap .detail .detail_text div {
+      padding: 0 0 0 24px;
+      color: #757575;
+      font-size: 13px;
+      line-height: 20px;
+      position: relative;
+      margin-bottom: 8px; }
+    .detail_wrap .detail .detail_text i {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 2px;
+      left: 0; }
+    .detail_wrap .detail .detail_text .gameTit {
+      font-size: 18px;
+      height: 40px;
+      line-height: 40px;
+      font-weight: bolder;
+      color: #3C3C3C; }
+    .detail_wrap .detail .detail_text .upTime i {
+      background: url(../images/showdetail_05.jpg); }
+    .detail_wrap .detail .detail_text .gameEsti i {
+      background: url(../images/showdetail_05.jpg) 0 -27px; }
+    .detail_wrap .detail .detail_text .gameTags i {
+      background: url(../images/showdetail_05.jpg) 0 -54px; }
 
 body {
   background: url(../images/store-bg-20200722.jpg); }
@@ -367,59 +432,8 @@ body {
   .foreshowWrap .next {
     top: 280px;
     right: -40px; }
-  .foreshowWrap .detail_wrap {
-    width: 224px;
-    min-height: 255px; }
-    .foreshowWrap .detail_wrap .detail {
-      width: 224px;
-      min-height: 255px;
-      position: absolute;
-      top: 145px;
-      background-color: #fff;
-      z-index: 15;
-      box-shadow: 5px 5px 5px rgba(136, 136, 136, 0.5);
-      display: none; }
-      .foreshowWrap .detail_wrap .detail .detail_banner {
-        width: 218px;
-        height: 124px;
-        border: 3px solid #fff;
-        position: relative; }
-        .foreshowWrap .detail_wrap .detail .detail_banner img {
-          width: 218px;
-          height: 124px;
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: none; }
-      .foreshowWrap .detail_wrap .detail .detail_text {
-        padding: 0 20px;
-        text-align: left; }
-        .foreshowWrap .detail_wrap .detail .detail_text div {
-          padding: 0 0 0 24px;
-          color: #757575;
-          font-size: 13px;
-          line-height: 20px;
-          position: relative;
-          margin-bottom: 8px; }
-        .foreshowWrap .detail_wrap .detail .detail_text i {
-          display: block;
-          width: 14px;
-          height: 14px;
-          position: absolute;
-          top: 2px;
-          left: 0; }
-        .foreshowWrap .detail_wrap .detail .detail_text .gameTit {
-          font-size: 18px;
-          height: 40px;
-          line-height: 40px;
-          font-weight: bolder;
-          color: #3C3C3C; }
-        .foreshowWrap .detail_wrap .detail .detail_text .upTime i {
-          background: url(../images/showdetail_05.jpg); }
-        .foreshowWrap .detail_wrap .detail .detail_text .gameEsti i {
-          background: url(../images/showdetail_05.jpg) 0 -27px; }
-        .foreshowWrap .detail_wrap .detail .detail_text .gameTags i {
-          background: url(../images/showdetail_05.jpg) 0 -54px; }
+  .foreshowWrap .detail_wrap .detail {
+    top: 145px; }
 
 .foreshow_list .text {
   height: 78px;
@@ -511,10 +525,271 @@ body {
         width: 320px;
         height: 710px;
         float: left;
-        background-color: #f69c00; }
-  .rankWrap .prev {
-    height: 110px;
-    left: -40px; }
-  .rankWrap .next {
-    height: 110px;
-    right: -40px; }
+        background: #fff; }
+        .rankWrap .rank .rank_list li .tit {
+          height: 25px;
+          padding: 16px 16px 14px; }
+          .rankWrap .rank .rank_list li .tit h4 {
+            float: left;
+            color: #3c3c3c;
+            font-size: 18px;
+            line-height: 25px;
+            font-weight: bolder; }
+          .rankWrap .rank .rank_list li .tit span {
+            height: 24px;
+            width: 24px;
+            float: left;
+            background: url("../images/icon-question-24.c966a1fd.png");
+            margin-left: 10px; }
+        .rankWrap .rank .rank_list li .gameList .item {
+          height: 54px;
+          padding: 20px 0;
+          transition: .3s; }
+          .rankWrap .rank .rank_list li .gameList .item:hover {
+            background-color: #f4f4f4; }
+          .rankWrap .rank .rank_list li .gameList .item i {
+            float: left;
+            width: 34px;
+            height: 34px;
+            margin: 10px 0;
+            background-image: url(../images/ranktag_02.jpg); }
+          .rankWrap .rank .rank_list li .gameList .item div {
+            height: 54px; }
+            .rankWrap .rank .rank_list li .gameList .item div img {
+              height: 54px;
+              width: 92px;
+              float: left; }
+            .rankWrap .rank .rank_list li .gameList .item div strong {
+              float: left;
+              margin-left: 20px; }
+              .rankWrap .rank .rank_list li .gameList .item div strong p {
+                font-size: 15px;
+                font-weight: bolder;
+                line-height: 28px;
+                color: #3C3C3C; }
+              .rankWrap .rank .rank_list li .gameList .item div strong span {
+                font-size: 14px;
+                color: #787878;
+                line-height: 28px; }
+
+.BTWrap {
+  width: 1000px;
+  height: 530px;
+  margin: 0 auto 20px; }
+  .BTWrap .BT {
+    height: 460px;
+    background: url("../images/tzone-bg-null.bd944fea.jpg"), no-repeat 50% 50%;
+    position: relative; }
+    .BTWrap .BT .tit {
+      height: 125px;
+      padding: 30px 40px 0; }
+      .BTWrap .BT .tit h3 {
+        font-size: 36px;
+        color: #FFF;
+        line-height: 54px;
+        font-weight: bolder; }
+      .BTWrap .BT .tit p {
+        font-size: 13px;
+        line-height: 20px;
+        height: 40px;
+        width: 380px;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: rgba(255, 255, 255, 0.6); }
+      .BTWrap .BT .tit a {
+        position: absolute;
+        top: 80px;
+        right: 50px;
+        width: 178px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 16px;
+        color: #000;
+        border-radius: 2px;
+        font-weight: bold;
+        background: transparent linear-gradient(280deg, #ffca28, #ffe082) 0 0 no-repeat padding-box; }
+    .BTWrap .BT .con {
+      height: 300px; }
+      .BTWrap .BT .con .txt h5 {
+        height: 22px;
+        line-height: 22px;
+        font-weight: bold;
+        font-size: 15px;
+        color: #3c3c3c;
+        padding: 6px 0 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .BTWrap .BT .con .txt p {
+        color: #757575;
+        font-size: 13px;
+        line-height: 20px; }
+      .BTWrap .BT .con .first {
+        display: block;
+        width: 470px;
+        height: 285px;
+        margin: 0 20px;
+        float: left;
+        background-color: #fff; }
+        .BTWrap .BT .con .first .pic {
+          overflow: hidden;
+          width: 200px;
+          height: 285px;
+          float: left; }
+          .BTWrap .BT .con .first .pic img {
+            display: block;
+            width: 200px;
+            height: 285px;
+            transition: .2s; }
+        .BTWrap .BT .con .first .txt {
+          padding: 11px 20px 0;
+          width: 230px;
+          float: left;
+          overflow: hidden; }
+          .BTWrap .BT .con .first .txt .letter {
+            height: 100px;
+            margin: 20px 0 30px;
+            background: #F4F4F4;
+            padding: 12px 15px;
+            font-size: 13px;
+            color: #757575; }
+            .BTWrap .BT .con .first .txt .letter strong {
+              display: block;
+              height: 72px;
+              overflow: hidden;
+              margin-bottom: 6px; }
+            .BTWrap .BT .con .first .txt .letter span {
+              height: 22px; }
+              .BTWrap .BT .con .first .txt .letter span i {
+                height: 22px;
+                width: 100px;
+                float: left;
+                line-height: 22px; }
+              .BTWrap .BT .con .first .txt .letter span i:last-of-type {
+                text-align: right; }
+          .BTWrap .BT .con .first .txt .mark {
+            height: 14px;
+            display: block;
+            text-align: center;
+            line-height: 14px;
+            border-radius: 7px;
+            background: #F4F4F4; }
+            .BTWrap .BT .con .first .txt .mark span {
+              color: #757575;
+              font-size: 12px; }
+      .BTWrap .BT .con .other {
+        display: block;
+        width: 225px;
+        height: 284px;
+        margin-right: 20px;
+        float: left;
+        background-color: #fff; }
+        .BTWrap .BT .con .other .pic {
+          height: 126px;
+          overflow: hidden; }
+          .BTWrap .BT .con .other .pic img {
+            width: 225px;
+            height: 126px;
+            transition: .3s; }
+        .BTWrap .BT .con .other .txt {
+          padding: 11px 15px 0;
+          overflow: hidden; }
+          .BTWrap .BT .con .other .txt div {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-top: 1px solid #e4e4e4;
+            margin-top: 20px; }
+
+.updateWrap {
+  margin: 0 auto 20px;
+  width: 1000px;
+  height: 472px;
+  position: relative; }
+  .updateWrap .update {
+    width: 1000px;
+    height: 419px;
+    overflow: hidden; }
+    .updateWrap .update .updateList {
+      width: 8000px;
+      height: 402px; }
+      .updateWrap .update .updateList li {
+        width: 340px;
+        height: 402px;
+        float: left; }
+        .updateWrap .update .updateList li > a {
+          display: block;
+          width: 320px;
+          height: 402px;
+          background: #FFF;
+          margin-right: 20px; }
+          .updateWrap .update .updateList li > a .pic {
+            width: 320px;
+            height: 180px;
+            overflow: hidden; }
+            .updateWrap .update .updateList li > a .pic img {
+              width: 320px;
+              height: 180px;
+              transition: .3s; }
+          .updateWrap .update .updateList li > a .txt {
+            padding: 16px 16px 0;
+            height: 202px; }
+            .updateWrap .update .updateList li > a .txt .tit {
+              height: 42px;
+              margin-bottom: 15px; }
+              .updateWrap .update .updateList li > a .txt .tit img {
+                width: 60px;
+                height: 80px;
+                border: 2px solid #fff;
+                margin: -40px 8px 0 0;
+                float: left;
+                z-index: 1;
+                position: relative; }
+              .updateWrap .update .updateList li > a .txt .tit .intro {
+                width: 215px;
+                height: 42px;
+                float: left; }
+                .updateWrap .update .updateList li > a .txt .tit .intro a {
+                  color: #3c3c3c;
+                  font-size: 14px;
+                  line-height: 20px;
+                  margin-bottom: 5px;
+                  display: block; }
+                  .updateWrap .update .updateList li > a .txt .tit .intro a span {
+                    color: #757575;
+                    float: right; }
+                .updateWrap .update .updateList li > a .txt .tit .intro span {
+                  display: block; }
+            .updateWrap .update .updateList li > a .txt .con h6 {
+              height: 20px;
+              line-height: 20px;
+              font-weight: bold;
+              font-size: 16px;
+              color: #3c3c3c;
+              margin-bottom: 12px; }
+            .updateWrap .update .updateList li > a .txt .con p {
+              height: 64px;
+              overflow: hidden;
+              color: #757575;
+              font-size: 14px;
+              margin-bottom: 10px; }
+            .updateWrap .update .updateList li > a .txt .con .time {
+              height: 42px;
+              line-height: 42px;
+              border-top: 1px solid #e4e4e4;
+              color: #757575;
+              font-size: 13px; }
+              .updateWrap .update .updateList li > a .txt .con .time i:last-child {
+                float: right; }
+
+.recommedWrap {
+  width: 1000px;
+  height: 480px;
+  margin: 0 auto 50px; }
+  .recommedWrap .recommed {
+    height: 410px;
+    background: url("../images/oss_5f0ffe2ee643c.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; }
