@@ -928,9 +928,101 @@ body{
     height:480px;
     margin:0 auto 50px;
     .recommed{
-        height:410px;
-        background:url("../images/oss_5f0ffe2ee643c.png") no-repeat center center;
-        background-size: cover;
-        background-attachment: fixed; 
+        width:960px;
+        height:375px;
+        background:url("../images/oss_5f0ffe2ee643c_03.jpg") no-repeat;
+        padding:35px 0 0 40px;
+        h3{
+            width:fit-content;
+            font-size:36px;
+            color:#FFF;
+            line-height: 54px;
+            font-weight: bolder;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: .3s;
+            border-bottom:2px solid rgba($color: #fff, $alpha: 0);
+            &:hover{
+                border-bottom:2px solid rgba($color: #fff, $alpha: 1);
+            }
+        }
+        p{
+            font-size:13px;
+            line-height: 20px;
+            height:63px;
+            width:464px;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color:rgba($color: #FFF, $alpha: .6);
+            margin-bottom: 12px;
+            padding-left:16px;
+            border-left:3px solid #515151;
+            cursor: pointer;
+        }
+        .toSee{
+            display: block;
+            width:160px;
+            height:36px;
+            padding:0 15px;
+            line-height: 36px;
+            text-align: left;
+            font-size:14px;
+            color:#000;
+            border-radius: 2px;
+            font-weight: bold;
+            position: relative;
+            margin-bottom: 40px;
+            background: transparent linear-gradient(280deg,#ffca28,#ffe082) 0 0 no-repeat padding-box;
+            span{
+                display: inline-block;
+                width:24px;
+                height: 24px;
+                background-image: url("../images/ico-btn-arrow-r.4b0772f7.png");
+                position: absolute;
+                top:6px;
+                right:15px;
+            }
+        }
+        div{
+            height:24px;
+            line-height: 24px;
+            font-size: 16px;
+            color:rgba($color: #fff, $alpha: .8);
+            font-weight: bolder;
+            margin-bottom: 10px;
+            img{
+                margin-right:5px;
+                vertical-align: middle;
+            }
+            strong{
+                font-size:14px;
+                margin-left:10px;
+            }
+        }
+        ul{
+            width:fit-content;
+            height:90px;
+            li{
+                width:160px;
+                height:90px;
+                margin-right:8px;
+                float: left;
+                a{
+                    display: block;
+                    width:160px;
+                    height:90px;
+                    overflow: hidden;
+                    &:hover img{
+                        transform: scale(1.1);
+                    }
+                    img{
+                        width:160px;
+                        height:90px;
+                        transition: .3s;
+                    }
+                }
+            }
+        }
     }
 }
