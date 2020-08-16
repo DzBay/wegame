@@ -1,0 +1,274 @@
+// 公共样式
+body{
+    background: url(../images/store-bg-20200722.jpg);
+}
+// 轮播图切换按钮
+.prev{
+    width:30px;
+    height:68px;
+    position: absolute;
+    z-index: 10;
+    top:calc(50% - 34px);
+    left:-40px;
+    background: rgba(0,0,0,.15);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+.prev::after{
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 20px;
+        display: block;
+        top:calc(50% - 10px);
+        left:10px;
+        opacity: .8;
+        background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat;
+}
+.next{
+    width:30px;
+    height:68px;
+    position: absolute;
+    z-index: 10;
+    top:calc(50% - 34px);
+    right:-40px;
+    background: rgba(0,0,0,.15);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+.next::after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 20px;
+    display: block;
+    top:calc(50% - 10px);
+    right:10px;
+    opacity: .8;
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat;
+}
+//banner区域，复用，暂时未改名
+// update最近更新
+.updateWrap{
+    margin:0 auto 20px;
+    width:1000px;
+    height:220px;
+    position: relative;
+    .update{
+        width:1000px;
+        height:220px;
+        overflow:hidden;
+        .updateList{
+            width:8000px;
+            height:220px;
+            li{
+                width:340px;
+                height:220px;
+                float: left;
+                >a{
+                    display: block;
+                    width:320px;
+                    height:220px;
+                    background: #FFF;
+                    margin-right:20px;
+                    .pic{
+                        width:320px;
+                        height:148px;
+                        margin-bottom: 12px;
+                        img{
+                            width:320px;
+                            height:148px;
+                        }
+                    }
+                    .txt{
+                        width:280px;
+                        height:72px;
+                        padding:0 20px;
+                        .name{
+                            font-size:16px;
+                            font-weight: bolder;
+                            line-height: 20px;
+                            color:#3c3c3c;
+                            margin-bottom: 5px;
+                        }
+                        .price{
+                            font-size:14px;
+                            font-weight: bolder;
+                            line-height: 24px;
+                            color:#ff6f00;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// gameList游戏列表
+.gListWrap{
+    width:1000px;
+    margin:0 auto 20px;
+    overflow: hidden;
+    .gList{
+        min-height:500px;
+        .listMain{
+            width:700px;
+            margin-right:20px;
+            float: left;
+            .listTop{
+                height:26px;
+                color:#757575;
+                font-size: 14px;
+                margin-bottom: 10px;
+                p{
+                    float: left;
+                    line-height: 26px;
+                }
+                .listTop_nav{
+                    float: right;
+                    li{
+                        height:24px;
+                        line-height: 24px;
+                        float: left;
+                        padding:0 12px;
+                        text-align: center;
+                        border:1px solid #bfbfbf;
+                    }
+                    .act{
+                        color:#fff;
+                        background:#212121;
+                    }
+                }
+            }
+            .games{
+                margin-bottom: 25px;
+                li{
+                    height:100px;
+                    margin-bottom: 10px;
+                    background: #fff;
+                    &:hover{
+                        background: #f4f4f4;
+                    }
+                    a{
+                        display: block;
+                        height:100px;
+                        color:#757575;
+                        img{
+                            width:180px;
+                            height:100px;
+                            float: left;
+                            margin-right:20px;
+                        }
+                        .intro{
+                            width:500px;
+                            height:80px;
+                            float: left;
+                            padding:10px 0;
+                            position: relative;
+                            .gameTit{
+                                font-weight: bolder;
+                                line-height: 18px;
+                                margin-bottom: 10px;
+                            }
+                            .gameMes{
+                                height: 18px;
+                                line-height: 18px;
+                                font-size: 12px;
+                                margin-bottom: 10px;
+                                p{
+                                    float: left;
+                                }
+                            }
+                            .gameTag{
+                                font-size: 12px;
+                                i{
+                                    padding:0 5px;
+                                    margin-right:5px;
+                                    border:1px solid #bfbfbf;
+                                }
+                            }
+                            .price{
+                                position: absolute;
+                                right:20px;
+                                top:40px;
+                            }
+                        }
+                    }
+                }
+            }
+            .pages{
+                width:700px;
+                height:24px;
+                .pageSel{
+                    height:24px;
+                    float: left;
+                    li{
+                        font-size:14px;
+                        color:#757575;
+                        border:1px solid #bfbfbf;
+                        height:22px;
+                        line-height: 22px;
+                        float: left;
+                        text-align: center;
+                        padding:0 8px;
+                        margin:0 2px;
+                    }
+                    li:first-of-type{
+                        width:38px;
+                        position: initial;;
+                        &::before{
+                            font-size:10px;
+                            vertical-align: top;
+                        }
+                    }
+                    li:last-of-type{
+                        width:38px;
+                        position: initial;;
+                        &::before{
+                            font-size:10px;
+                            vertical-align: top;
+                        }
+                    }
+                    span{
+                        width:26px;
+                        height:24px;
+                        text-align: center;
+                        float: left;
+                    }
+                }
+                .pagesCut{
+                    margin-left:30px;
+                    height:24px;
+                    line-height: 24px;
+                    color:#757575;
+                    font-size:14px;
+                    float: left;
+                    input{
+                        border:1px solid #bfbfbf;
+                        width:36px;
+                        height:22px;
+                        line-height: 22px;
+                        padding:0 5px;
+                        margin:0 8px;
+                        vertical-align: top;
+                    }
+                    button{
+                        margin-left:10px;
+                        width:50px;
+                        height:24px;
+                        line-height: 22px;
+                        padding:0 8px;
+                        border:1px solid #bfbfbf;
+                        border-radius: 11px;
+                        outline: none;
+                    }
+                }
+            }
+        }
+        .sidebar{
+            width:240px;
+            float: left;
+        }
+    }
+}

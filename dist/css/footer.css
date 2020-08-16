@@ -1,0 +1,100 @@
+.footWrap {
+  width: 100%;
+  height: 178px;
+  padding: 56px 0;
+  background: #191919; }
+  .footWrap .foot {
+    width: 1000px;
+    height: 178px;
+    margin: 0 auto; }
+    .footWrap .foot .con {
+      height: 76px;
+      margin-bottom: 30px; }
+      .footWrap .foot .con dl {
+        float: left;
+        height: 76px; }
+        .footWrap .foot .con dl dt {
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 16px;
+          margin-right: 20px;
+          line-height: 24px;
+          float: left; }
+        .footWrap .foot .con dl dd {
+          float: left; }
+          .footWrap .foot .con dl dd a {
+            float: left;
+            padding-right: 27px;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 0.4); }
+            .footWrap .foot .con dl dd a:hover {
+              color: rgba(255, 255, 255, 0.8); }
+              .footWrap .foot .con dl dd a:hover span {
+                color: rgba(255, 255, 255, 0.8); }
+              .footWrap .foot .con dl dd a:hover img {
+                opacity: .8; }
+            .footWrap .foot .con dl dd a i {
+              display: block;
+              border: 1px solid #3a3a3a;
+              height: 48px;
+              width: 48px;
+              border-radius: 50%;
+              margin-bottom: 8px; }
+              .footWrap .foot .con dl dd a i img {
+                display: block;
+                height: 48px;
+                width: 48px;
+                opacity: .4; }
+            .footWrap .foot .con dl dd a span {
+              display: block;
+              width: 50px;
+              text-align: center;
+              color: rgba(255, 255, 255, 0.4); }
+      .footWrap .foot .con dl:nth-of-type(2) {
+        margin-left: 178px; }
+      .footWrap .foot .con dl:last-of-type {
+        float: right; }
+        .footWrap .foot .con dl:last-of-type dd {
+          width: 140px; }
+          .footWrap .foot .con dl:last-of-type dd a:nth-of-type(even) {
+            padding-right: 0; }
+    .footWrap .foot .link {
+      height: 24px;
+      line-height: 24px;
+      width: fit-content;
+      margin: 0 auto; }
+      .footWrap .foot .link li {
+        float: left;
+        position: relative; }
+        .footWrap .foot .link li::after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 12px;
+          background: #757575;
+          position: absolute;
+          top: 7px;
+          right: 0px; }
+        .footWrap .foot .link li a {
+          padding: 0 10px;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.4); }
+          .footWrap .foot .link li a:hover {
+            color: rgba(255, 255, 255, 0.8); }
+    .footWrap .foot p {
+      height: 24px;
+      line-height: 24px;
+      width: fit-content;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 12px; }
+    .footWrap .foot a {
+      display: block;
+      height: 24px;
+      line-height: 24px;
+      width: fit-content;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 12px; }
+      .footWrap .foot a:hover {
+        color: rgba(255, 255, 255, 0.8); }
