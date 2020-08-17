@@ -69,7 +69,7 @@ task('connect',async ()=>{
     root: './dist',
     livereload: true,
     port: 8080,
-    host:'192.168.1.106'
+    host:'10.20.158.40'
   });
 })
 

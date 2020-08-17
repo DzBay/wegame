@@ -1,6 +1,5 @@
 // 项目切换
 function ItemCut(options){//暂时只支持滚动切换
-    console.log(111);
     this.catchElement(options);
 }
 ItemCut.prototype = {

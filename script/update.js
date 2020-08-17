@@ -5,7 +5,7 @@ function Update(){
     this.init();
 };
 Update.prototype = {
-    // prototype = Update,
+    constructor : Update,
     // 初始化
     init:function(){
         // 获取元素

@@ -1,0 +1,449 @@
+@charset "UTF-8";
+.prev {
+  width: 30px;
+  height: 68px;
+  position: absolute;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer; }
+
+.prev::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 20px;
+  display: block;
+  top: calc(50% - 10px);
+  left: 10px;
+  opacity: .8;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat; }
+
+.next {
+  width: 30px;
+  height: 68px;
+  position: absolute;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer; }
+
+.next::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 20px;
+  display: block;
+  top: calc(50% - 10px);
+  right: 10px;
+  opacity: .8;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat; }
+
+body, html {
+  background: url("https://wegame.gtimg.com/g.2000199-r.b5261/info/12efe4a887c323072e672d7e2ea7b1eb.jpg"); }
+
+.topWrap {
+  display: none; }
+
+.detailHeaderWrap {
+  width: 100%;
+  height: 243px;
+  margin-bottom: 20px; }
+  .detailHeaderWrap .detailBannerWrap {
+    width: 100%;
+    height: 193px;
+    position: relative;
+    background: url("../images/boxiya.jpg") no-repeat center center; }
+    .detailHeaderWrap .detailBannerWrap::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 193px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: .15;
+      background: url(https://wegame.gtimg.com/g.55555-r.c4663/rail/game_detail/images/bg-gamedetail-header.117a43f6.png); }
+    .detailHeaderWrap .detailBannerWrap:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 193px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(https://wegame.gtimg.com/g.55555-r.c4663/rail/game_detail/images/bg-detail-mask.8fbfe6c6.png) repeat-x 0 0; }
+    .detailHeaderWrap .detailBannerWrap .detailBanner {
+      width: 1000px;
+      height: 193px;
+      margin: 0 auto;
+      position: relative; }
+      .detailHeaderWrap .detailBannerWrap .detailBanner .crumbs {
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        top: 25px;
+        left: 0px;
+        z-index: 3; }
+        .detailHeaderWrap .detailBannerWrap .detailBanner .crumbs li {
+          float: left;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.6);
+          font-weight: bolder; }
+          .detailHeaderWrap .detailBannerWrap .detailBanner .crumbs li a {
+            color: rgba(255, 255, 255, 0.6); }
+        .detailHeaderWrap .detailBannerWrap .detailBanner .crumbs li:nth-of-type(even) {
+          margin: 0 5px;
+          font-family: '宋体'; }
+      .detailHeaderWrap .detailBannerWrap .detailBanner img {
+        width: 105px;
+        height: 150px;
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        z-index: 3; }
+      .detailHeaderWrap .detailBannerWrap .detailBanner .gameTit {
+        height: 45px;
+        line-height: 45px;
+        font-size: 30px;
+        font-weight: bolder;
+        color: #fff;
+        position: absolute;
+        top: 85px;
+        left: 140px;
+        z-index: 3; }
+  .detailHeaderWrap .detailMenuWrap {
+    width: 100%;
+    height: 50px;
+    background: #fff; }
+    .detailHeaderWrap .detailMenuWrap .detailMenu {
+      width: 870px;
+      height: 50px;
+      margin: 0 auto;
+      padding: 0 0 0 130px; }
+      .detailHeaderWrap .detailMenuWrap .detailMenu li {
+        float: left;
+        padding: 0 20px; }
+        .detailHeaderWrap .detailMenuWrap .detailMenu li:hover {
+          background: #f4f4f4; }
+        .detailHeaderWrap .detailMenuWrap .detailMenu li a {
+          height: 50px;
+          line-height: 50px;
+          display: block;
+          font-size: 14px;
+          color: #3c3c3c;
+          position: relative; }
+          .detailHeaderWrap .detailMenuWrap .detailMenu li a.show {
+            font-weight: bolder; }
+            .detailHeaderWrap .detailMenuWrap .detailMenu li a.show::after {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 4px;
+              background: #FFB300;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              box-sizing: border-box; }
+
+.detailBody {
+  width: 100%; }
+  .detailBody .gameSum {
+    width: 1000px;
+    height: 470px;
+    margin: 0 auto 24px;
+    background: #fff; }
+    .detailBody .gameSum .gameImgWrap {
+      float: left;
+      width: 700px;
+      height: 470px;
+      position: relative; }
+      .detailBody .gameSum .gameImgWrap .gameImg {
+        width: 700px;
+        height: 394px;
+        overflow: hidden; }
+        .detailBody .gameSum .gameImgWrap .gameImg ul {
+          width: 12000px;
+          height: 394px; }
+          .detailBody .gameSum .gameImgWrap .gameImg ul li {
+            width: 700px;
+            height: 394px;
+            float: left; }
+            .detailBody .gameSum .gameImgWrap .gameImg ul li img {
+              width: 700px;
+              height: 394px; }
+      .detailBody .gameSum .gameImgWrap .gameImgPagingWrap {
+        width: 620px;
+        height: 76px;
+        padding: 0 40px;
+        background: #212121; }
+        .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging {
+          width: 620px;
+          height: 76px;
+          overflow: hidden; }
+          .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul {
+            width: 12000px;
+            height: 58px;
+            padding: 10px 0; }
+            .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul li {
+              width: 106px;
+              height: 58px;
+              float: left; }
+              .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul li img {
+                width: 98px;
+                height: 56px;
+                margin-right: 6px;
+                border: 1px solid transparent; }
+                .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul li img.show {
+                  border: 1px solid #fff; }
+      .detailBody .gameSum .gameImgWrap .prev {
+        bottom: 2px;
+        left: 4px; }
+      .detailBody .gameSum .gameImgWrap .next {
+        bottom: 2px;
+        right: 4px; }
+      .detailBody .gameSum .gameImgWrap .bigImg {
+        position: fixed;
+        margin: auto;
+        top: 20px;
+        bottom: 20px;
+        left: 150px;
+        right: 150px;
+        background: #1e1e1e;
+        z-index: 99;
+        border: 1px solid #1e1e1e;
+        overflow: hidden;
+        display: none; }
+        .detailBody .gameSum .gameImgWrap .bigImg .bigBox {
+          width: 100%;
+          position: absolute;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0; }
+        .detailBody .gameSum .gameImgWrap .bigImg button {
+          width: 29px;
+          height: 29px;
+          font-size: 28px;
+          color: #fff;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          outline: none;
+          background: #1e1e1e;
+          position: absolute;
+          top: 5px;
+          right: 5px; }
+    .detailBody .gameSum .gameText {
+      float: left;
+      width: 260px;
+      height: 430px;
+      padding: 20px; }
+      .detailBody .gameSum .gameText .gameMes {
+        margin-bottom: 30px; }
+        .detailBody .gameSum .gameText .gameMes dl {
+          height: 32px;
+          line-height: 32px;
+          color: #757575;
+          font-size: 12px;
+          margin-bottom: 2px; }
+          .detailBody .gameSum .gameText .gameMes dl dt {
+            width: 100px;
+            height: 32px;
+            float: left;
+            margin-right: 2px;
+            text-align: center;
+            font-weight: bolder;
+            background: rgba(0, 0, 0, 0.07); }
+          .detailBody .gameSum .gameText .gameMes dl dd {
+            width: 134px;
+            height: 32px;
+            padding: 0 12px;
+            float: left;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: rgba(0, 0, 0, 0.07); }
+        .detailBody .gameSum .gameText .gameMes .gameTag {
+          overflow: hidden;
+          margin-top: 10px; }
+          .detailBody .gameSum .gameText .gameMes .gameTag a {
+            color: #3c3c3c;
+            font-size: 12px;
+            line-height: 22px;
+            height: 22px;
+            border: 1px solid #e0e0e0;
+            margin: 0 4px 4px 0;
+            float: left;
+            padding: 0 5px; }
+      .detailBody .gameSum .gameText .gamePay {
+        overflow: hidden; }
+        .detailBody .gameSum .gameText .gamePay .discounts {
+          height: 22px;
+          line-height: 22px;
+          font-size: 13px;
+          color: #F69C00;
+          padding: 5px 10px;
+          margin-bottom: 15px;
+          border: 1px solid rgba(246, 156, 0, 0.5);
+          background-color: #fef5e5; }
+          .detailBody .gameSum .gameText .gamePay .discounts p {
+            font-weight: bolder;
+            float: left; }
+          .detailBody .gameSum .gameText .gamePay .discounts span {
+            font-weight: bolder; }
+          .detailBody .gameSum .gameText .gamePay .discounts strong {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            float: right; }
+        .detailBody .gameSum .gameText .gamePay .gamePrice {
+          height: 26px;
+          line-height: 26px;
+          font-size: 14px;
+          color: #757575;
+          margin-bottom: 6px; }
+        .detailBody .gameSum .gameText .gamePay .buyGroup {
+          height: 48px;
+          line-height: 48px;
+          margin-bottom: 10px; }
+          .detailBody .gameSum .gameText .gamePay .buyGroup .buy {
+            height: 48px;
+            float: left; }
+            .detailBody .gameSum .gameText .gamePay .buyGroup .buy .buyNow {
+              width: 141px;
+              height: 48px;
+              font-size: 18px;
+              color: #000;
+              font-weight: bolder;
+              text-align: center;
+              background: #ffca28;
+              transition: .5s;
+              float: left; }
+              .detailBody .gameSum .gameText .gamePay .buyGroup .buy .buyNow:hover {
+                background: #efb70c; }
+            .detailBody .gameSum .gameText .gamePay .buyGroup .buy .shoppingCart {
+              width: 28px;
+              height: 28px;
+              padding: 10px 13px;
+              float: left;
+              background: #efb70c; }
+              .detailBody .gameSum .gameText .gamePay .buyGroup .buy .shoppingCart span {
+                display: block;
+                width: 28px;
+                height: 28px;
+                background: url("../images/ico-add-cart.5d70cde0.png") no-repeat; }
+          .detailBody .gameSum .gameText .gamePay .buyGroup .gift {
+            height: 48px;
+            font-size: 14px;
+            color: #757575;
+            float: left;
+            position: relative;
+            padding-left: 24px;
+            margin-left: 10px; }
+            .detailBody .gameSum .gameText .gamePay .buyGroup .gift:hover {
+              color: #ff8f00; }
+              .detailBody .gameSum .gameText .gamePay .buyGroup .gift:hover::before {
+                background: url("../images/ico-gift.d00a7973.png") no-repeat 0 -16px; }
+            .detailBody .gameSum .gameText .gamePay .buyGroup .gift::before {
+              content: "";
+              display: block;
+              float: left;
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              top: 16px;
+              left: 0px;
+              background: url("../images/ico-gift.d00a7973.png") no-repeat; }
+        .detailBody .gameSum .gameText .gamePay .userAgreement {
+          font-size: 12px;
+          color: #757575; }
+          .detailBody .gameSum .gameText .gamePay .userAgreement input {
+            width: 12px;
+            height: 12px;
+            margin-right: 4px; }
+          .detailBody .gameSum .gameText .gamePay .userAgreement a {
+            color: #757575;
+            margin: 0 4px;
+            text-decoration: underline dotted; }
+  .detailBody .gameDetailWrap {
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto 40px; }
+    .detailBody .gameDetailWrap .gameDetail {
+      width: 700px;
+      float: left;
+      margin-right: 20px; }
+      .detailBody .gameDetailWrap .gameDetail .tit {
+        height: 30px;
+        line-height: 30px;
+        color: #3c3c3c;
+        font-size: 18px;
+        margin-bottom: 20px; }
+      .detailBody .gameDetailWrap .gameDetail .textWrap {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        padding: 20px 30px 60px;
+        background: #fff; }
+        .detailBody .gameDetailWrap .gameDetail .textWrap.show {
+          height: auto; }
+        .detailBody .gameDetailWrap .gameDetail .textWrap .text {
+          white-space: pre-line; }
+        .detailBody .gameDetailWrap .gameDetail .textWrap .allText {
+          height: 19px;
+          line-height: 0px;
+          border-top: 1px solid #e4e4e4;
+          text-align: center;
+          color: #757575;
+          font-size: 14px;
+          font-weight: bolder;
+          position: absolute;
+          bottom: 0;
+          right: 30px;
+          left: 30px;
+          padding-top: 20px;
+          box-shadow: 0px -20px 30px #fff;
+          background: #fff;
+          cursor: pointer; }
+          .detailBody .gameDetailWrap .gameDetail .textWrap .allText:hover {
+            color: #ff8f00; }
+    .detailBody .gameDetailWrap .requirement {
+      width: 240px;
+      height: 250px;
+      padding: 20px;
+      float: right;
+      background: #fff; }
+      .detailBody .gameDetailWrap .requirement .tit {
+        height: 30px;
+        line-height: 30px;
+        color: #3c3c3c;
+        font-size: 18px;
+        margin-bottom: 20px; }
+      .detailBody .gameDetailWrap .requirement dl {
+        height: 36px;
+        line-height: 36px;
+        color: #757575;
+        font-size: 12px;
+        margin-bottom: 2px; }
+        .detailBody .gameDetailWrap .requirement dl dt {
+          width: 80px;
+          height: 36px;
+          float: left;
+          margin-right: 2px;
+          text-align: center;
+          font-weight: bolder;
+          background: rgba(0, 0, 0, 0.07); }
+        .detailBody .gameDetailWrap .requirement dl dd {
+          width: 144px;
+          height: 36px;
+          padding-left: 10px;
+          float: left;
+          text-align: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          background: rgba(0, 0, 0, 0.07); }

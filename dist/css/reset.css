@@ -1,4 +1,7 @@
 @charset "UTF-8";
+* {
+  box-sizing: content-box; }
+
 html, body, ol, ul, li, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select, button {
   margin: 0;
   padding: 0; }
