@@ -1,3 +1,4 @@
+import './jquery-3.5.1.js';
 $(function(){
     // 初始化detail详情缩略图left
     var prevTranslate = 0;

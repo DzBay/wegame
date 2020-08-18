@@ -1,3 +1,4 @@
+import './jquery-3.5.1.js';
 $(function(){
     // 排行榜轮播图
     var rank = new Swiper ('.rank', {

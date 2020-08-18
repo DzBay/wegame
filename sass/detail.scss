@@ -20,7 +20,7 @@
         top:calc(50% - 10px);
         left:10px;
         opacity: .8;
-        background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat;
+        background:url("../images/icon-left.png") no-repeat;
 }
 .next{
     width:30px;
@@ -41,12 +41,17 @@
     top:calc(50% - 10px);
     right:10px;
     opacity: .8;
-    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat;
+    background:url("../images/icon-right.png") no-repeat;
 }
-
-body,html{
-    background: url("https://wegame.gtimg.com/g.2000199-r.b5261/info/12efe4a887c323072e672d7e2ea7b1eb.jpg");
-    // 50% 0px no-repeat rgb(252, 233, 216);
+// 背景图
+.bgImg{
+    // background: url("") 50% 0px no-repeat;
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: -1;
 }
 .topWrap{
     display: none;
@@ -60,7 +65,7 @@ body,html{
         width:100%;
         height:193px;
         position: relative;
-        background:url("../images/boxiya.jpg") no-repeat center center;
+        // background:url("../images/boxiya.jpg") no-repeat center center;
         &::before{
             content: '';
             display: block;
@@ -70,7 +75,7 @@ body,html{
             top:0;
             left: 0;
             opacity: .15;
-            background: url(https://wegame.gtimg.com/g.55555-r.c4663/rail/game_detail/images/bg-gamedetail-header.117a43f6.png);
+            background: url("../images/bg-gamedetail-header.117a43f6.png");
         }
         &:after{
             content: '';
@@ -80,7 +85,7 @@ body,html{
             position: absolute;
             top:0;
             left: 0;
-            background: url(https://wegame.gtimg.com/g.55555-r.c4663/rail/game_detail/images/bg-detail-mask.8fbfe6c6.png) repeat-x 0 0;
+            background: url("../images/bg-detail-mask.png") repeat-x 0 0;
         }
         .detailBanner{
             width:1000px;

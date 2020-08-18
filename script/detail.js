@@ -2,8 +2,49 @@ import './jquery-3.5.1.js';
 $(function(){
     $(".headerBox").load("./header.html");
     $(".footerBox").load("./footer.html");
-    detail();
+    loadData(detail);
 });
+
+
+// 渲染数据
+async function loadData(cb){
+    var name;
+    var json;
+    name = location.href.split("?")[1].split("=")[1];
+    await $.ajax({
+        url:('../data/game.json'),
+        dataType:"json",
+        success:function(data){
+            data.forEach(function(item){
+                if(name === item.id){
+                    json = item;
+                }
+            });
+            // 渲染到页面
+            $(".gameName").text(json.name);
+            $(".gameHead").attr("src",json.head);
+            $(json["1000"]).each(function(index,item){
+                $(".gameImg ul").append(`<li><img src="${item}" alt=""></li>`);
+                $(".gameImgPaging ul").append(`<li><img src="${item}" alt=""></li>`);
+            });
+            $(".issuingDate dd").text(json.issuingDate);
+            $(".recomRate dd").text(json.recomRate);
+            $(".publisher dd").text(json.publisher);
+            $(".operator dd").text(json.operator);
+            $(".platform dd").text(json.platform);
+            $(json.gameTag).each(function(index,item){
+                $(".gameTag").append(`<a href="#">${item}</a>`);
+            });
+            $(".discounts span").text(json.discounts);
+            $(".gamePrice").text(json.price);
+            $(".bgImg").css("background",`url(${json["1920b"]}) 50% 0 no-repeat`);
+            $(".detailBannerWrap").css("background",`url(${json["1920s"]})no-repeat center center`);
+        },
+    });
+    cb();
+};
+
+// 交互
 function Detail (){
     // 初始化
     this.init();

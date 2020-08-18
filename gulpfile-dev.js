@@ -12,7 +12,7 @@ task('delDist',async ()=>{
 
 // 处理图片
 task('images', async ()=>{
-  src('./images/*.*')
+  src('./images/**/*.*')
   .pipe(dest('./dist/images'))
   .pipe(load.connect.reload())
 })

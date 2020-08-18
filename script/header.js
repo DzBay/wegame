@@ -1,3 +1,4 @@
+import './jquery-3.5.1.js';
 $(function(){
     // 搜索栏点击事件
     $(".top_search input").on("click",function(){

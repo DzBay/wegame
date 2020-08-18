@@ -1,0 +1,20 @@
+1000 --- detail轮播图   ../images/onway/1000-1.jpg
+142 --- rank图      ../images/onway/142.jpg
+
+head --头像图   ../images/onway/head.jpg
+hot——热点预告图 ../images/onway/hot.jpg 
+
+1400 ——首页banner  ../images/onway/1400.jpg
+1920s detail顶部背景 ../images/onway/1920-s.jpg
+1920b  背景图
+
+name——名称
+issuingDate --发行日期
+recomRate——推荐率
+publisher——开发商
+operator——运营商
+platform_——发行平台
+gameTag——游戏标签
+price——原价
+discounts——优惠价
+text——游戏介绍
