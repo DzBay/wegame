@@ -24,7 +24,7 @@ body{
         top:calc(50% - 10px);
         left:10px;
         opacity: .8;
-        background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat;
+        background:url("../images/icon-left.png") no-repeat;
 }
 .next{
     width:30px;
@@ -47,7 +47,7 @@ body{
     top:calc(50% - 10px);
     right:10px;
     opacity: .8;
-    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat;
+    background:url("../images/icon-right.png") no-repeat;
 }
 //banner区域，复用，暂时未改名
 // update最近更新
@@ -127,6 +127,8 @@ body{
                 .listTop_nav{
                     float: right;
                     li{
+                        cursor: pointer;  
+                        color:#757575;
                         height:24px;
                         line-height: 24px;
                         float: left;
@@ -177,6 +179,7 @@ body{
                                 margin-bottom: 10px;
                                 p{
                                     float: left;
+                                    margin-right:10px;
                                 }
                             }
                             .gameTag{
@@ -212,6 +215,7 @@ body{
                         text-align: center;
                         padding:0 8px;
                         margin:0 2px;
+                        background-color:#fff;
                     }
                     li:first-of-type{
                         width:30px;

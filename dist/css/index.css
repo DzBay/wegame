@@ -40,7 +40,7 @@ a:hover .pic img {
   top: calc(50% - 10px);
   left: 10px;
   opacity: .8;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat; }
+  background: url("../images/icon-left.png") no-repeat; }
 
 .next {
   width: 30px;
@@ -63,56 +63,56 @@ a:hover .pic img {
   top: calc(50% - 10px);
   right: 10px;
   opacity: .8;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat; }
+  background: url("../images/icon-right.png") no-repeat; }
 
-.detail_wrap .detail {
+.detailSmall {
   width: 224px;
   min-height: 255px;
   position: absolute;
+  top: 0;
+  left: 0;
   background-color: #fff;
   z-index: 15;
   box-shadow: 5px 5px 5px rgba(136, 136, 136, 0.5);
   display: none; }
-  .detail_wrap .detail .detail_banner {
+  .detailSmall .detail_banner {
     width: 218px;
     height: 124px;
     border: 3px solid #fff;
     position: relative; }
-    .detail_wrap .detail .detail_banner img {
+    .detailSmall .detail_banner img {
       width: 218px;
       height: 124px;
       position: absolute;
-      top: 0;
-      left: 0;
       display: none; }
-  .detail_wrap .detail .detail_text {
+  .detailSmall .detail_text {
     padding: 0 20px;
     text-align: left; }
-    .detail_wrap .detail .detail_text div {
+    .detailSmall .detail_text div {
       padding: 0 0 0 24px;
       color: #757575;
       font-size: 13px;
       line-height: 20px;
       position: relative;
       margin-bottom: 8px; }
-    .detail_wrap .detail .detail_text i {
+    .detailSmall .detail_text i {
       display: block;
       width: 14px;
       height: 14px;
       position: absolute;
       top: 2px;
       left: 0; }
-    .detail_wrap .detail .detail_text .gameTit {
+    .detailSmall .detail_text .gameTit {
       font-size: 18px;
       height: 40px;
       line-height: 40px;
       font-weight: bolder;
       color: #3C3C3C; }
-    .detail_wrap .detail .detail_text .upTime i {
+    .detailSmall .detail_text .upTime i {
       background: url(../images/showdetail_05.jpg); }
-    .detail_wrap .detail .detail_text .gameEsti i {
+    .detailSmall .detail_text .gameEsti i {
       background: url(../images/showdetail_05.jpg) 0 -27px; }
-    .detail_wrap .detail .detail_text .gameTags i {
+    .detailSmall .detail_text .gameTags i {
       background: url(../images/showdetail_05.jpg) 0 -54px; }
 
 body {
@@ -146,6 +146,9 @@ body {
   width: 1400px;
   height: 390px;
   margin-left: -200px; }
+  .banner_img img {
+    width: 1400px;
+    height: 390px; }
 
 .bannerWrap .banner_text {
   width: 214px;
@@ -157,12 +160,12 @@ body {
   z-index: 8; }
 
 .banner_text_li {
+  display: block;
   width: 194px;
   height: 38px;
   padding: 15px 0 0 20px;
   color: #e0e0e0;
-  font-size: 14px;
-  cursor: pointer; }
+  font-size: 14px; }
   .banner_text_li .tit {
     display: inline-block;
     font-weight: 900;
@@ -209,7 +212,8 @@ body {
       .foreshowWrap .foreshow .foreshow_list li {
         width: 184px;
         height: 400px;
-        float: left; }
+        float: left;
+        position: relative; }
         .foreshowWrap .foreshow .foreshow_list li::before {
           content: "";
           width: 4px;
@@ -240,12 +244,6 @@ body {
         font-size: 13px;
         line-height: 20px;
         display: block; }
-  .foreshowWrap .prev {
-    top: 280px;
-    left: -40px; }
-  .foreshowWrap .next {
-    top: 280px;
-    right: -40px; }
   .foreshowWrap .detail_wrap .detail {
     top: 145px; }
 
@@ -356,6 +354,7 @@ body {
             background: url("../images/icon-question-24.c966a1fd.png");
             margin-left: 10px; }
         .rankWrap .rank .rank_list li .gameList .item {
+          display: block;
           height: 54px;
           padding: 20px 0;
           transition: .3s; }
@@ -365,8 +364,7 @@ body {
             float: left;
             width: 34px;
             height: 34px;
-            margin: 10px 0;
-            background-image: url(../images/ranktag_02.jpg); }
+            margin: 10px 0; }
           .rankWrap .rank .rank_list li .gameList .item div {
             height: 54px; }
             .rankWrap .rank .rank_list li .gameList .item div img {

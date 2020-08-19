@@ -45,7 +45,7 @@ a:hover .pic img{
         top:calc(50% - 10px);
         left:10px;
         opacity: .8;
-        background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA+uLoSi717yOlUkI1KNnTVj46pX264wAAAExJREFUCNeNzkkOwCAIBVCB1qFz/fe/q4lgWCqrF8Lww2JVKaYrgVV7QvxVgnh23QLaujIPhQd02PYL+oyZve3DfsIPm/WxhuAyz9wA84kCKN+/ZksAAAAASUVORK5CYII=") no-repeat;
+        background:url("../images/icon-left.png") no-repeat;
 }
 .next{
     width:30px;
@@ -68,72 +68,70 @@ a:hover .pic img{
     top:calc(50% - 10px);
     right:10px;
     opacity: .8;
-    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAMAAACDMFxkAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMA+erjIi3eq1dTTkgyKPbl0MxfRB2wug3UAAAAR0lEQVQI14XNSQ7AIAwDwMZtofvu/3+1F0MQF3waRZHdtRPPLRFE8nsQo7wascuLsR/kufBkvMSHvPMxfP7qBXUtfCwGqZkfDxkCYiWbt90AAAAASUVORK5CYII=") no-repeat;
+    background:url("../images/icon-right.png") no-repeat;
 }
 // 详情缩略图detail
-.detail_wrap{
-    .detail{
-        width:224px;
-        min-height: 255px;
-        position: absolute;
-        background-color: #fff;
-        z-index: 15;
-        box-shadow: 5px 5px 5px rgba($color: #888888, $alpha: .5);
-        display: none;
-        .detail_banner{
+.detailSmall{
+    width:224px;
+    min-height: 255px;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #fff;
+    z-index: 15;
+    box-shadow: 5px 5px 5px rgba($color: #888888, $alpha: .5);
+    display: none;
+    .detail_banner{
+        width:218px;
+        height:124px;
+        border:3px solid #fff;
+        position: relative;
+        img{
             width:218px;
             height:124px;
-            border:3px solid #fff;
+            position: absolute;
+            display: none;
+        }
+    }
+    .detail_text{
+        padding:0 20px;
+        text-align: left;
+        div{
+            padding:0 0 0 24px;
+            color: #757575;
+            font-size: 13px;
+            line-height: 20px;
             position: relative;
-            img{
-                width:218px;
-                height:124px;
-                position: absolute;
-                top:0;
-                left:0;
-                display: none;
+            margin-bottom: 8px;
+        }
+        i{
+            display: block;
+            width:14px;
+            height:14px;
+            position: absolute;
+            top:2px;
+            left:0;
+        }
+        .gameTit{
+            font-size: 18px;
+            height:40px;
+            line-height: 40px;
+            font-weight: bolder;
+            color: #3C3C3C;
+        }
+        .upTime{
+            i{
+                background: url(../images/showdetail_05.jpg);
             }
         }
-        .detail_text{
-            padding:0 20px;
-            text-align: left;
-            div{
-                padding:0 0 0 24px;
-                color: #757575;
-                font-size: 13px;
-                line-height: 20px;
-                position: relative;
-                margin-bottom: 8px;
-            }
+        .gameEsti{
             i{
-                display: block;
-                width:14px;
-                height:14px;
-                position: absolute;
-                top:2px;
-                left:0;
+                background: url(../images/showdetail_05.jpg) 0 -27px;
             }
-            .gameTit{
-                font-size: 18px;
-                height:40px;
-                line-height: 40px;
-                font-weight: bolder;
-                color: #3C3C3C;
-            }
-            .upTime{
-                i{
-                    background: url(../images/showdetail_05.jpg);
-                }
-            }
-            .gameEsti{
-                i{
-                    background: url(../images/showdetail_05.jpg) 0 -27px;
-                }
-            }
-            .gameTags{
-                i{
-                    background: url(../images/showdetail_05.jpg) 0 -54px;
-                }
+        }
+        .gameTags{
+            i{
+                background: url(../images/showdetail_05.jpg) 0 -54px;
             }
         }
     }
@@ -173,6 +171,10 @@ body{
     width:1400px;
     height:390px;
     margin-left:-200px;
+    img{
+        width:1400px;
+        height:390px;
+    }
 }
 .bannerWrap .banner_text{
     width:214px;
@@ -184,12 +186,12 @@ body{
     z-index: 8;
 }
 .banner_text_li{
+    display: block;
     width:194px;
     height:38px;
     padding:15px 0 0 20px;
     color:#e0e0e0;
     font-size: 14px;
-    cursor: pointer;
     .tit{
         display: inline-block;
         font-weight: 900;
@@ -247,6 +249,7 @@ body{
                 width:184px;
                 height:400px;
                 float: left;
+                position: relative;
                 &::before{
                     content: "";
                     width: 4px;
@@ -284,14 +287,14 @@ body{
             }
         }
     }
-    .prev{
-        top: 280px;
-        left:-40px;
-    }
-    .next{
-        top: 280px;
-        right:-40px;
-    }
+    // .prev{
+    //     top: 280px;
+    //     left:-40px;
+    // }
+    // .next{
+    //     top: 280px;
+    //     right:-40px;
+    // }
     .detail_wrap{
         .detail{
             top:145px;
@@ -429,6 +432,7 @@ body{
                 }
                 .gameList{
                     .item{
+                        display: block;
                         height:54px;
                         padding:20px 0;
                         transition: .3s;
@@ -440,7 +444,6 @@ body{
                             width:34px;
                             height:34px;
                             margin:10px 0;
-                            background-image: url(../images/ranktag_02.jpg);
                         }
                         div{
                             height:54px;
@@ -468,12 +471,6 @@ body{
                     }
                 }
             }
-        }
-    }
-    .detail_wrap{
-        .detail{
-            // top:145px;
-            // right:188px;
         }
     }
 }

@@ -1,25 +1,31 @@
-import './jquery-3.5.1.js';
-$(function(){
-    // 初始化detail详情缩略图left
-    var prevTranslate = 0;
-    var beginIndex = 0;
-    $(".foreshowWrap .detail").each(function(index, item){
-        $(item).css("left",(index-beginIndex+1)*188 + (index-beginIndex)*16 + "px");
+import {detailSmall} from './detailSmall.js';
+export {foreshow};
+function foreshow(){
+    loadData(foreshowAct);
+};
+// 渲染数据
+async function loadData(cb){
+    var json;
+    await $.ajax({
+        url:('../data/game.json'),
+        dataType:"json",
+        success:function(data){
+            // 渲染到页面
+            $(data).each(function(index,item){
+                $(".foreshow_list>li").eq(index).find(".text p").text(`${index+2}月`);
+                $(".foreshow_list>li").eq(index).find(".text span").text("正在热卖");
+                $(".foreshow_list>li").eq(index).find("a").attr("href",`./detail.html?name=${item.id}`);
+                $(".foreshow_list>li").eq(index).find("img").attr("src", item.hot);
+                $(".foreshow_list>li").eq(index).find(".name").text(item.name);
+                $(".foreshow_list>li").eq(index).find(".price").text(item.price);
+            });
+        },
     });
-    // detail内轮播图
-    function detailRun (self){
-        var index = 0;
-        $(self).find(".detail_banner img").eq(index).css("display","block");
-        clearInterval(timer);
-        var timer = setInterval(() => {
-            index++;
-            if(index>$(self).find(".detail_banner img").length-1){
-                index = 0;
-            }
-            $(self).find(".detail_banner img").eq(index).css("display","block");
-            $(self).find(".detail_banner img").eq(index).siblings().css("display","none");
-        }, 2000);
-    }
+    cb();//./detail.html?name=onway
+};
+
+
+function foreshowAct (){
     // foreshow热点预告轮播图
     var foreshow = new Swiper ('.foreshow', {
         direction: 'horizontal', // 横向切换选项
@@ -27,45 +33,18 @@ $(function(){
         slidesPerView : 'auto',
         spaceBetween : 20,
         slidesPerGroup : 2,
-        // initialSlide :$(".foreshow_list li:last-child").index()-4,
-        on:{
-            transitionEnd:function(){
-                if(prevTranslate - foreshow.translate > 0 && prevTranslate - foreshow.translate < 400){
-                    beginIndex = foreshow.activeIndex + 1;
-                    console.log(111);
-                }else{
-                    beginIndex = foreshow.activeIndex;
-                    prevTranslate = foreshow.translate;
-                }
-                $(".foreshowWrap .detail").each(function(index, item){
-                    $(item).css("left",(index-beginIndex+1)*188 + (index-beginIndex)*16 + "px");
-                });
-            }
-        },
         // 如果需要前进后退按钮
         navigation: {
           nextEl: '.foreshowWrap .swiper-button-next',
           prevEl: '.foreshowWrap .swiper-button-prev',
         },
     });
-    // foreshow移入出现详情缩略图
-    var detail_timer;
+    // detailSmall详情图
     $(".foreshow_list a").hover(function(){
-        clearTimeout(detail_timer);
-        detail_timer = setTimeout(()=>{
-            $(".foreshowWrap .detail").eq($(this).closest("li").index()).stop().fadeIn(function(){
-                loadImg(this);
-                detailRun(this);
-            });
-        },500)
+        // 移入触发
+        detailSmall("in",this);
     },function(){
-        clearTimeout(detail_timer);
-        $(".foreshowWrap .detail").eq($(this).closest("li").index()).stop().fadeOut();
+        // 移出触发
+        detailSmall("out",this);
     });
-    // 图片懒加载
-    function loadImg(self){
-        $(self).find(".detail_banner img").each((index, item)=>{
-            item.src = item.getAttribute('data-src');
-        })
-    };
-})
+};

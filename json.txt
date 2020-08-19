@@ -18,3 +18,9 @@ gameTag——游戏标签
 price——原价
 discounts——优惠价
 text——游戏介绍
+
+status
+——1 火爆新品
+——2本周热门
+——3最新上架
+——4折扣促销

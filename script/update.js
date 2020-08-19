@@ -1,5 +1,38 @@
 export {update};
-import './jquery-3.5.1.js';
+function update(){
+    loadData(updateAct);
+}
+// 渲染数据
+async function loadData(cb){
+    var json;
+    await $.ajax({
+        url:('../data/game.json'),
+        dataType:"json",
+        success:function(data){
+            // 渲染到页面
+            $(data).each(function(index,item){
+                // 首页
+               $(".updateList>li>a").eq(index).attr("href",`./detail.html?name=${item.id}`);
+               $(".updateList .pic img").eq(index).attr("src",item["360"]);
+               $(".updateList .tit img").eq(index).attr("src",item["head"]);
+               $(".updateList .tit a").eq(index).attr("href",`./detail.html?name=${item.id}`);
+               $(".updateList .tit a").eq(index).text(item.name);
+               var gameTag = "";
+               $(item.gameTag).each(function(i,it){
+                    gameTag+=`${it} / `;
+               });
+               $(".updateList .tit span").eq(index).text(gameTag);
+
+
+               //列表页轮播图
+               $(".updateList .name").eq(index).text(item.name);
+               $(".updateList .price").eq(index).text(item.price);
+            });
+        },
+    });
+    cb();//./detail.html?name=onway
+};
+
 function Update(){
     // 初始化
     this.init();
@@ -56,7 +89,7 @@ Update.prototype = {
     },
 };
 // 接口
-function update(){
+function updateAct(){
     return new Update();
 };
 

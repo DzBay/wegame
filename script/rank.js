@@ -1,5 +1,30 @@
-import './jquery-3.5.1.js';
-$(function(){
+import {detailSmall} from './detailSmall.js';
+export {rank};
+function rank(){
+    loadData(rankAct);
+};
+// 渲染数据
+async function loadData(cb){
+    var json;
+    await $.ajax({
+        url:('../data/game.json'),
+        dataType:"json",
+        success:function(data){
+            // 渲染到页面
+            $(".rank_list>li").each(function(i,it){
+                $(data).each(function(index,item){
+                    $(it).find(".item").eq(index).attr("href",`./detail.html?name=${item.id}`);
+                    $(it).find(".item img").eq(index).attr("src",item["142"]);
+                    $(it).find(".item p").eq(index).text(item.name);
+                    $(it).find(".item span").eq(index).text(item.price);
+                    $(it).find(".item i").eq(index).css("background",`url(../images/ranktag_02.jpg) 0 ${-84*index}px`);
+                });
+            })
+        },
+    });
+    cb();//./detail.html?name=onway
+};
+function rankAct(){
     // 排行榜轮播图
     var rank = new Swiper ('.rank', {
         direction: 'horizontal', // 横向切换选项
@@ -32,23 +57,15 @@ $(function(){
     $(".rankWrap .prev").on("click",function(){
         toPrev();
     });
-    // 动态插入detail详情缩略图
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // detailSmall详情图
+    $(".gameList .item").hover(function(){
+        // 移入触发
+        detailSmall("in",this);
+    },function(){
+        // 移出触发
+        detailSmall("out",this);
+    });
     // 函数节流
     function throttle(delay,callback){
         var lastTime, timer;
@@ -66,4 +83,4 @@ $(function(){
             };
         };
     };
-});
+};
