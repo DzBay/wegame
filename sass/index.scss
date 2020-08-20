@@ -29,7 +29,7 @@ a:hover .pic img{
     height:68px;
     position: absolute;
     z-index: 10;
-    top:calc(50% - 34px);
+    top:calc(50% - 34px + 60px);
     left:-40px;
     background: rgba(0,0,0,.15);
     border-radius: 4px;
@@ -52,7 +52,7 @@ a:hover .pic img{
     height:68px;
     position: absolute;
     z-index: 10;
-    top:calc(50% - 34px);
+    top:calc(50% - 34px + 60px);
     right:-40px;
     background: rgba(0,0,0,.15);
     border-radius: 4px;
@@ -287,18 +287,9 @@ body{
             }
         }
     }
-    // .prev{
-    //     top: 280px;
-    //     left:-40px;
-    // }
-    // .next{
-    //     top: 280px;
-    //     right:-40px;
-    // }
     .detail_wrap{
         .detail{
             top:145px;
-            // left:188px;
         }
     }
 }

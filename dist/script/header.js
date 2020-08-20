@@ -1,5 +1,8 @@
+import {login} from './login.js';
 export {header};
 function header(){
+    // 登录事件
+    login();
     // 搜索栏点击事件
     $(".top_search input").focus(function(){
         console.log(1111);

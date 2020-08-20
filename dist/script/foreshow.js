@@ -12,9 +12,10 @@ async function loadData(cb){
         success:function(data){
             // 渲染到页面
             $(data).each(function(index,item){
+                $(".foreshow_list>li").eq(index).find("a").attr("gameId",item.id);
                 $(".foreshow_list>li").eq(index).find(".text p").text(`${index+2}月`);
                 $(".foreshow_list>li").eq(index).find(".text span").text("正在热卖");
-                $(".foreshow_list>li").eq(index).find("a").attr("href",`./detail.html?name=${item.id}`);
+                $(".foreshow_list>li").eq(index).find("a").attr("href",`./detail.html?name=${item.id}`)
                 $(".foreshow_list>li").eq(index).find("img").attr("src", item.hot);
                 $(".foreshow_list>li").eq(index).find(".name").text(item.name);
                 $(".foreshow_list>li").eq(index).find(".price").text(item.price);

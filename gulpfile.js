@@ -1,14 +1,77 @@
-// 怎么知道用户输入了什么命令？gulp dev 还是  gulp build
-// console.log( process );// {...}
-// console.log( process.argv[2] );// dev / build
-const mode = process.argv[2];
+// 加载模块
+const {task,src,dest,watch,series,parallel} = require('gulp');
+// 用于加载其他gulp插件
+const load = require('gulp-load-plugins')();
+// nodejs的del模块用于删除文件
+const del = require('del');
 
-// 根据输入的命令加载执行不同的配置文件
-switch(mode){
-  case 'dev':
-    require('./gulpfile-dev');
-    break;
-  case 'build':
-    require('./gulpfile-build');
-    break;
-}
+// 删除dist目录
+task('delDist',async ()=>{
+  await del('./dist');
+})
+
+// 处理图片
+task('images', async ()=>{
+  src('./images/**/*.*')
+  .pipe(dest('./dist/images'))
+  .pipe(load.connect.reload())
+})
+
+// 处理数据
+task('data', async ()=>{
+  src('./data/*.*')
+  .pipe(dest('./dist/data'))
+  .pipe(load.connect.reload())
+})
+
+// 处理sass
+task('sass', async ()=>{
+  src('./sass/*.scss')
+  .pipe(load.sassChina())
+  // .pipe(load.rev())
+  .pipe(dest('./dist/css'))
+  // .pipe(load.rev.manifest())
+  // .pipe(dest('./rev/css'))
+  .pipe(load.connect.reload())
+})
+
+// 处理js
+task('script', async ()=>{
+  src('./script/*.js')
+  // .pipe(load.rev())
+  // .pipe(load.babel({presets: ['@babel/env']}))
+  .pipe(dest('./dist/script'))
+  // .pipe(load.rev.manifest())
+  // .pipe(dest('./rev/js'))
+  .pipe(load.connect.reload())
+})
+
+// 处理html
+task('html', async ()=>{
+  src(['./rev/**/*.json','./html/*.html'])
+  // .pipe(load.revCollector({replaceReved:true}))
+  .pipe(dest('./dist/html'))
+  .pipe(load.connect.reload())
+})
+
+// 监听文件变化
+task('watch',async ()=>{
+  watch('./data/*.*',series('data'));
+  watch('./images/*.*',series('images'));
+  watch('./sass/*.scss',series('sass','html'));
+  watch('./script/*.js',series('script','html'));
+  watch('./html/*.html',series('html'));
+})
+
+// 启动服务，自动刷新
+task('connect',async ()=>{
+  load.connect.server({
+    root: './dist',
+    livereload: true,
+    port: 8080,
+    // host:'10.20.158.40'
+  });
+})
+
+// 构建开发包
+task('default',series('delDist','data','images','sass','script','html','connect','watch'))

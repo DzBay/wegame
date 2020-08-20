@@ -9,11 +9,11 @@ self.onmessage = function (e){//e.data
             json.forEach(function(item){
                 if(e.data === item.id){
                     self.postMessage({err: 1,msg:item});
-                }
+                };
             });
         } else {
           self.postMessage({err: 0,msg: '获取失败'});
-        }
-      }
-    }
-}
+        };
+      };
+    };
+};

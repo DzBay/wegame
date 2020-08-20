@@ -13,13 +13,14 @@ async function loadData(cb){
             // 渲染到页面
             $(".rank_list>li").each(function(i,it){
                 $(data).each(function(index,item){
+                    $(it).find(".item").eq(index).attr("gameId",item.id);
                     $(it).find(".item").eq(index).attr("href",`./detail.html?name=${item.id}`);
                     $(it).find(".item img").eq(index).attr("src",item["142"]);
                     $(it).find(".item p").eq(index).text(item.name);
                     $(it).find(".item span").eq(index).text(item.price);
                     $(it).find(".item i").eq(index).css("background",`url(../images/ranktag_02.jpg) 0 ${-84*index}px`);
                 });
-            })
+            });
         },
     });
     cb();//./detail.html?name=onway
@@ -72,7 +73,7 @@ function rankAct(){
         return function (){
             var nowTime = Date.now();//当前时间戳
             if (lastTime && (nowTime < (lastTime + delay))) {
-                clearTimeout(timer)
+                clearTimeout(timer);
                 timer = setTimeout(function () {
                     lastTime = nowTime;//记录当前时间
                     callback();

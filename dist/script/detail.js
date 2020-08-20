@@ -18,7 +18,7 @@ async function loadData(cb){
             data.forEach(function(item){
                 if(name === item.id){
                     json = item;
-                }
+                };
             });
             // 渲染到页面
             $(".gameName").text(json.name);
@@ -157,4 +157,4 @@ Detail.prototype = {
 };
 function detail(){
     return new Detail();
-}
+};

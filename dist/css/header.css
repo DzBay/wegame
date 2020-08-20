@@ -43,7 +43,8 @@ h1 {
 
 .header .navRight li {
   float: left;
-  margin-left: 20px; }
+  margin-left: 20px;
+  position: relative; }
 
 .header .navRight a {
   line-height: 34px;
@@ -51,6 +52,15 @@ h1 {
   font-size: 13px;
   display: block;
   color: #8C8C8C; }
+
+.header .navRight div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 34px;
+  width: 26px;
+  z-index: 5;
+  display: none; }
 
 .header .navRight a:hover {
   color: #fff; }
@@ -64,6 +74,104 @@ h1 {
   background-color: #ffc800;
   color: #333;
   border-color: #191919; }
+
+.loginWrap {
+  display: none; }
+  .loginWrap .mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #BFBFBF;
+    opacity: .5;
+    z-index: 665; }
+  .loginWrap .login {
+    width: 560px;
+    height: 400px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    z-index: 666; }
+    .loginWrap .login .close {
+      outline: none;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 40px;
+      line-height: 40px;
+      height: 40px;
+      width: 40px;
+      font-weight: 100;
+      color: #BFBFBF;
+      cursor: pointer;
+      border: none;
+      background: rgba(255, 255, 255, 0); }
+    .loginWrap .login .way {
+      width: 100%;
+      height: 55px;
+      border-bottom: 1px solid #BFBFBF; }
+      .loginWrap .login .way ul {
+        width: fit-content;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        height: 55px; }
+        .loginWrap .login .way ul li {
+          width: 40px;
+          height: 50px;
+          float: left;
+          position: relative; }
+          .loginWrap .login .way ul li span {
+            height: 32px;
+            width: 32px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block; }
+        .loginWrap .login .way ul li:first-of-type {
+          margin-right: 10px;
+          border-bottom: 5px solid #f69c00; }
+          .loginWrap .login .way ul li:first-of-type span {
+            background-image: url("../images/icon.png");
+            background-position-x: 96px; }
+        .loginWrap .login .way ul li:last-of-type {
+          border-bottom: 5px solid rgba(246, 156, 0, 0); }
+          .loginWrap .login .way ul li:last-of-type span {
+            background: url("../images/icon.png");
+            background-position-x: 64px; }
+    .loginWrap .login p {
+      width: 272px;
+      height: 42px;
+      line-height: 42px;
+      text-align: center;
+      margin: 0 auto 20px; }
+      .loginWrap .login p input, .loginWrap .login p button {
+        display: block;
+        border: 1px solid #BFBFBF;
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        padding: 10px; }
+      .loginWrap .login p button {
+        background: #6AD03F;
+        color: #fff;
+        outline: none;
+        cursor: pointer; }
+    .loginWrap .login .tit {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 0px; }
+    .loginWrap .login .titSmall {
+      font-size: 16px;
+      color: #666; }
 
 /* 顶部top */
 .topWrap {

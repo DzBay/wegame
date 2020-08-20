@@ -60,7 +60,7 @@ Update.prototype = {
         var newItem = "";
         for(var i=0; i<3; i++){
             newItem += `<li>${this.lists.eq(i).html()}</li>`;
-        }
+        };
         this.lists.parent().append(newItem);
     },
     // 前进后退按钮点击事件

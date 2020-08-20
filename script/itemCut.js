@@ -53,18 +53,14 @@ ItemCut.prototype = {
                 this.index = 0;
             }else if(this.index < 0){
                 this.index = this.item.length;
-            }
-        }
+            };
+        };
     },
 };
 // // 公开接口
 function itemCut(options){
     return new ItemCut(options);
-}
-// function factory(options){
-//     return new ItemCut(options);
-// }
-// window.itemCut = factory;
+};
 
 itemCut({
     "itemWrap":".foreshow",

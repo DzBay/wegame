@@ -42,14 +42,14 @@ List.prototype = {
                 if($(item).find("input").prop("checked")){
                     $(item).find("span").text();
                     this.tagArr.push($(item).find("span").text());
-                }
+                };
             });
             if(this.tagArr == false){
                 this.loadData(this);
             }else{
                 this.loadData(this,1);
-            }
-        })
+            };
+        });
     },
     // 修改页码样式
     pageCss:function(){
@@ -112,8 +112,8 @@ List.prototype = {
                             if(self.tagArr.includes(item.gameTag[k])){
                                 newBox.push(item);
                                 break;
-                            }
-                        }
+                            };
+                        };
                     });
                     data = newBox;
                 };
@@ -146,7 +146,7 @@ List.prototype = {
                                     </div>
                                 </a></li>
                                 `
-                            )
+                            );
                         };
                     };
                 });
@@ -159,4 +159,4 @@ List.prototype = {
 // 公开接口
 function list(){
     return new List();
-}
+};

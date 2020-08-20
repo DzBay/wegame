@@ -37,9 +37,9 @@ function bannerAct(){
             $(".banner_text_li").eq(imgIndex).addClass("active active_game");
         }else{
             $(".banner_text_li").eq(imgIndex).addClass("active active_act");
-        }
+        };
         bannerImg.slideTo(imgIndex);
-        autoMove()
+        autoMove();
         function autoMove(){
             clearInterval(timer);
             timer = setInterval(function(){
@@ -79,7 +79,7 @@ function bannerAct(){
             },
             function () {
                 autoMove();
-            }
+            },
         );
     }();
 };
