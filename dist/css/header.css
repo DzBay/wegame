@@ -1,4 +1,54 @@
 @charset "UTF-8";
+.aside-right {
+  z-index: 20;
+  width: 54px;
+  padding: 10px 0;
+  background: #fff;
+  position: fixed;
+  left: calc(50% + 600px);
+  bottom: 100px;
+  border-radius: 27px; }
+  .aside-right .cart, .aside-right .toTop {
+    width: 54px;
+    height: 34px;
+    position: relative; }
+    .aside-right .cart:hover .mask, .aside-right .toTop:hover .mask {
+      opacity: 0; }
+    .aside-right .cart a, .aside-right .toTop a {
+      width: 34px;
+      height: 34px;
+      display: block;
+      margin: auto;
+      position: relative; }
+      .aside-right .cart a .mask, .aside-right .toTop a .mask {
+        width: 30px;
+        height: 34px;
+        position: absolute;
+        top: 0;
+        left: 2px;
+        background: #fff;
+        opacity: .6;
+        transition: .3s; }
+    .aside-right .cart .text, .aside-right .toTop .text {
+      width: fit-content;
+      height: 18px;
+      padding: 9px 10px;
+      border: 1px solid #bfbfbf;
+      background: #fff;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      right: 60px;
+      display: none;
+      z-index: 20; }
+  .aside-right .cart a {
+    background: url("../images/ico-add-cart.5d70cde0.png") no-repeat center 6px; }
+  .aside-right .toTop {
+    display: none;
+    margin-top: 4px; }
+    .aside-right .toTop a {
+      background: url("../images/gs-ico-top.8dead209.png") no-repeat; }
+
 .headerWrap {
   height: 80px;
   width: 100%;

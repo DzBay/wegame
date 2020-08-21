@@ -19,4 +19,30 @@ function header(){
             "top":20 + "px",
         });
     });
+    //右侧边栏事件
+    // 函数防抖
+    let scroll = throttle(500,function(){
+        console.log($(window).scrollTop());
+        if($(window).scrollTop()>540){
+            $(".aside-right .toTop").stop().slideDown();
+        }else{
+            $(".aside-right .toTop").stop().slideUp();
+        };
+    });
+    $(window).scroll(scroll);
+        // 点击事件
+    $(".aside-right .toTop").on("click",function(){
+        $('body,html').animate({scrollTop:0}); 
+    });
+        // 移入文字显示
+    $(".aside-right .cart").hover(function(){
+        $(".aside-right .cart .text").stop(true).fadeIn("fast");
+    },function(){
+        $(".aside-right .cart .text").stop(true).fadeOut("fast");
+    });
+    $(".aside-right .toTop").hover(function(){
+        $(".aside-right .toTop .text").stop(true).fadeIn("fast");
+    },function(){
+        $(".aside-right .toTop .text").stop(true).fadeOut("fast");
+    });
 };

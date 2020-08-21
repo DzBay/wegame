@@ -1,4 +1,68 @@
 @charset "utf-8";
+
+//右侧标栏
+.aside-right{
+    z-index: 20;
+    width:54px;
+    padding:10px 0;
+    background:#fff;
+    position: fixed;
+    left:calc(50% + 600px);
+    bottom:100px;
+    border-radius: 27px;
+    .cart,.toTop{
+        width:54px;
+        height:34px;
+        position: relative;
+        &:hover .mask{
+            opacity: 0;
+        }
+        a{
+            width:34px;
+            height:34px;
+            display: block;
+            margin:auto;
+            position: relative;
+            .mask{
+                width:30px;
+                height:34px;
+                position: absolute;
+                top:0;
+                left:2px;
+                background:#fff;
+                opacity: .6;
+                transition: .3s;
+            }
+        }
+        .text{
+            width:fit-content;
+            height:18px;
+            padding:9px 10px;
+            border:1px solid #bfbfbf;
+            background:#fff;
+            white-space: nowrap;
+            position: absolute;
+            top:0;
+            right:60px;
+            display: none;
+            z-index: 20;
+        }
+    }
+    .cart{
+        a{
+            background:url("../images/ico-add-cart.5d70cde0.png") no-repeat center 6px;
+        }
+    }
+    .toTop{
+        display: none;
+        margin-top:4px;
+        a{
+            background:url("../images/gs-ico-top.8dead209.png") no-repeat;
+        }
+    }
+}
+
+//头部
 .headerWrap{
     height:80px;
     width:100%;

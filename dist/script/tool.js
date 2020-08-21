@@ -20,7 +20,6 @@ function throttle(delay,cb){
 //节流改，规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效，停止触发后将不再触发。
 function throttleG(delay,cb){
     let lastTime;
-    let timer;
     return function(){
         let nowTime = Date.now();
         if(!lastTime || nowTime - lastTime >= delay){
@@ -29,6 +28,17 @@ function throttleG(delay,cb){
         };
     };
 };
+
+// 函数防抖
+function debounce(delay,cb){
+    let timer;
+    return function (){
+      clearTimeout(timer);
+      timer = setTimeout(function (){
+        cb();
+      },delay);
+    };
+  };
 
 
 
