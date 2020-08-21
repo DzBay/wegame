@@ -53,8 +53,6 @@ DetailSmall.prototype = {
     // 渲染数据
     loadData:function(){
         this.getData();
-        console.log(this.$touchEle.attr("gameId"));
-        console.log(this.data);
         $(this.data).each((index,item)=>{
             var tagStr = "";
             var imgStr = "";
