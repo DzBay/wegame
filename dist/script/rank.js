@@ -42,7 +42,8 @@ function rankAct(){
         $(this).addClass("show").siblings().removeClass("show");
         rank.slideToLoop($(this).index());
     });
-    var toNext = throttle(500,function(){
+    //函数节流
+    var toNext = throttleG(500,function(){
         var nowIndex = rank.realIndex;
         rank.slideToLoop(nowIndex + 3);
         $(".rank_nav li").eq(rank.realIndex).addClass("show").siblings().removeClass("show");
@@ -52,12 +53,8 @@ function rankAct(){
         rank.slideToLoop(nowIndex - 3);
         $(".rank_nav li").eq(rank.realIndex).addClass("show").siblings().removeClass("show");
     });
-    $(".rankWrap .next").on("click",function(){
-        toNext();
-    });
-    $(".rankWrap .prev").on("click",function(){
-        toPrev();
-    });
+    $(".rankWrap .next").on("click",toNext);
+    $(".rankWrap .prev").on("click",toPrev);
 
     // detailSmall详情图
     $(".gameList .item").hover(function(){
@@ -67,21 +64,4 @@ function rankAct(){
         // 移出触发
         detailSmall("out",this);
     });
-    // 函数节流
-    function throttle(delay,callback){
-        var lastTime, timer;
-        return function (){
-            var nowTime = Date.now();//当前时间戳
-            if (lastTime && (nowTime < (lastTime + delay))) {
-                clearTimeout(timer);
-                timer = setTimeout(function () {
-                    lastTime = nowTime;//记录当前时间
-                    callback();
-                }, delay);
-            }else {//立即执行
-                lastTime = nowTime;//记录当前时间
-                callback();
-            };
-        };
-    };
 };

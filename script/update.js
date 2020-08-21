@@ -65,14 +65,8 @@ Update.prototype = {
     },
     // 前进后退按钮点击事件
     onClick:function(){
-        this.prev.on("click", ()=>{
-            this.index-=this.num;
-            this.indexAmend(this.itemCut);
-        });
-        this.next.on("click", ()=>{
-            this.index+=this.num;
-            this.indexAmend(this.itemCut);
-        });
+        this.prev.on("click", this.toPrev());
+        this.next.on("click", this.toNext());
     },
     // 修正下标
     indexAmend:function(cb){
@@ -86,6 +80,19 @@ Update.prototype = {
     // 根据下标切换项目
     itemCut:function(self){
         self.update.stop().animate({"scrollLeft":self.index * self.itemWidth});
+    },
+    //函数节流处理
+    toNext: function(){
+        return throttleG(500,()=>{
+            this.index+=this.num;
+            this.indexAmend(this.itemCut);
+        });
+    },
+    toPrev: function(){
+        return throttleG(500,()=>{
+            this.index-=this.num;
+            this.indexAmend(this.itemCut);
+        });
     },
 };
 // 接口

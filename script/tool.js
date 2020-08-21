@@ -1,3 +1,63 @@
+//函数节流，规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效，停止触发后，一个单位时候后触发最后一次
+function throttle(delay,cb){
+    let lastTime;
+    let timer;
+    return function(){
+        let nowTime = Date.now();
+        if(lastTime && nowTime - lastTime < delay){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                cb();
+            },delay)
+        }else{
+            clearTimeout(timer);
+            lastTime = nowTime;
+            cb();
+        };
+    };
+};
+
+//节流改，规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效，停止触发后将不再触发。
+function throttleG(delay,cb){
+    let lastTime;
+    let timer;
+    return function(){
+        let nowTime = Date.now();
+        if(!lastTime || nowTime - lastTime >= delay){
+            lastTime = nowTime;
+            cb();
+        };
+    };
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// itemCut({
+//     "itemWrap":".foreshow",
+//     "list":".foreshow_list",
+//     "item":".foreshow_list li",
+//     "cutNum":2,
+//     "loop":false,
+// });
+
+
 // 项目切换
 function ItemCut(options){//暂时只支持滚动切换
     this.catchElement(options);
@@ -61,11 +121,3 @@ ItemCut.prototype = {
 function itemCut(options){
     return new ItemCut(options);
 };
-
-itemCut({
-    "itemWrap":".foreshow",
-    "list":".foreshow_list",
-    "item":".foreshow_list li",
-    "cutNum":2,
-    "loop":false,
-});
