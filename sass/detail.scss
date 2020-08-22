@@ -203,6 +203,7 @@
                         img{
                             width:700px;
                             height:394px;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -224,6 +225,8 @@
                             width:106px;
                             height:58px;
                             float: left;
+                            cursor: pointer;
+                            position: relative;
                             img{
                                 width:98px;
                                 height:56px;
@@ -231,6 +234,18 @@
                                 &.show{
                                     border:1px solid #fff;
                                 }
+                            }
+                            span{
+                                width:64px;
+                                height:64px;
+                                display: block;
+                                position: absolute;
+                                top:0;
+                                bottom: 0;
+                                right:0;
+                                left:0;
+                                margin:auto;
+                                background:url("../images/ico-slide-player.fc6385ff.png");
                             }
                         }
                     }

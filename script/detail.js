@@ -1,6 +1,7 @@
 import './jquery-3.5.1.js';
+import {header} from './header.js';
 $(function(){
-    $(".headerBox").load("./header.html");
+    $(".headerBox").load("./header.html",header);
     $(".footerBox").load("./footer.html");
     loadData(detail);
 });
@@ -23,6 +24,12 @@ async function loadData(cb){
             // 渲染到页面
             $(".gameName").text(json.name);
             $(".gameHead").attr("src",json.head);
+            $(json.video).each(function(index,item){
+                $(".gameImg ul").append(`<li><video src="${item}" controls width="100%" height="100%" muted autoplay></video></li>`);
+            });
+            $(json.videoFir).each(function(index,item){
+                $(".gameImgPaging ul").append(`<li><img src="${item}" alt=""><span></span></li>`);
+            });
             $(json["1000"]).each(function(index,item){
                 $(".gameImg ul").append(`<li><img src="${item}" alt=""></li>`);
                 $(".gameImgPaging ul").append(`<li><img src="${item}" alt=""></li>`);
@@ -58,6 +65,7 @@ Detail.prototype = {
         this.$gameImg = $(".gameImg");
         this.$paging = $(".gameImgPaging");
         this.$imgLists = $(".gameImg ul>li");
+        this.$video = $(".gameImg ul>li video");
         this.$pagingLists = $(".gameImgPaging ul>li");
         this.$prev = $(".gameImgWrap .prev");
         this.$next = $(".gameImgWrap .next");
@@ -66,12 +74,15 @@ Detail.prototype = {
         // 声明变量
         this.$imgWidth = this.$imgLists[0].offsetWidth;
         this.$pagingWidth = this.$pagingLists[0].offsetWidth;
+        this.timer;
         this.index = 0;//起始/当前下标
         this.prevIndex = 0;//上次的下标
         this.num = 1;//每次切换数量和方向(左负右正)
         // 绑定事件
         this.imgMove();
+        this.videoPlay();
         this.onClick();
+        this.hoverImg();
     },
     // 运动函数
     imgMove:function(){
@@ -105,12 +116,38 @@ Detail.prototype = {
         _this.$pagingLists.eq(_this.prevIndex).find("img").removeClass("show");
         _this.$pagingLists.eq(_this.index).find("img").addClass("show");
     },
+    // 运动停止
+    moveStop:function(){
+        clearInterval(this.timer);
+    },
+    // 视频播放事件
+    videoPlay:function(){
+        var _this = this;
+        this.$video.on("play", function(){
+            _this.moveStop();
+        });
+        this.$video.on("ended", function(){
+            _this.index++;
+            _this.imgCut();
+            _this.imgMove();
+        });
+    },
+    // 移入移出事件
+    hoverImg:function(){
+        var _this = this;
+        //图片移入暂停运动和移出开始运动
+        this.$imgLists.find("img").hover(function(){
+            _this.moveStop();
+        },function(){
+            _this.imgMove();
+        });
+    },
     // 点击事件
     onClick:function(){
         var _this = this;
         // 点击图片放大事件
-        this.$imgLists.on("click",function(){
-            var imgSrc = $(this).find("img").prop("src");
+        this.$imgLists.find("img").on("click",function(){
+            var imgSrc = $(this).prop("src");
             _this.$bigImg.find(".bigBox").prop("src",imgSrc);
             _this.$bigImg.fadeIn();
             clearInterval(_this.timer);

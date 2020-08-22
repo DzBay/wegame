@@ -178,7 +178,8 @@
             float: left; }
             .detailBody .gameSum .gameImgWrap .gameImg ul li img {
               width: 700px;
-              height: 394px; }
+              height: 394px;
+              cursor: pointer; }
       .detailBody .gameSum .gameImgWrap .gameImgPagingWrap {
         width: 620px;
         height: 76px;
@@ -195,7 +196,9 @@
             .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul li {
               width: 106px;
               height: 58px;
-              float: left; }
+              float: left;
+              cursor: pointer;
+              position: relative; }
               .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul li img {
                 width: 98px;
                 height: 56px;
@@ -203,6 +206,17 @@
                 border: 1px solid transparent; }
                 .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul li img.show {
                   border: 1px solid #fff; }
+              .detailBody .gameSum .gameImgWrap .gameImgPagingWrap .gameImgPaging ul li span {
+                width: 64px;
+                height: 64px;
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                background: url("../images/ico-slide-player.fc6385ff.png"); }
       .detailBody .gameSum .gameImgWrap .prev {
         bottom: 2px;
         left: 4px; }

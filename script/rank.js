@@ -55,13 +55,11 @@ function rankAct(){
     });
     $(".rankWrap .next").on("click",toNext);
     $(".rankWrap .prev").on("click",toPrev);
-
-    // detailSmall详情图
     $(".gameList .item").hover(function(){
         // 移入触发
-        detailSmall("in",this);
+        detailSmall().typeIn(this);
     },function(){
         // 移出触发
-        detailSmall("out",this);
+        detailSmall().typeOut(this);
     });
 };

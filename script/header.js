@@ -22,7 +22,6 @@ function header(){
     //右侧边栏事件
     // 函数防抖
     let scroll = throttle(500,function(){
-        console.log($(window).scrollTop());
         if($(window).scrollTop()>540){
             $(".aside-right .toTop").stop().slideDown();
         }else{

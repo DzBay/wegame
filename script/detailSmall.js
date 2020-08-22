@@ -22,7 +22,8 @@ DetailSmall.prototype = {
         this.data;
     },
     // 设置触发事件（延迟1秒触发，渐进效果)
-    typeIn:function(){
+    typeIn:function(self){
+        this.getEle(self);
         clearTimeout(this.timer);
         this.timer = setTimeout(()=>{
             this.boxPosition();
@@ -32,7 +33,8 @@ DetailSmall.prototype = {
             });
         },1000);
     },
-    typeOut:function(){
+    typeOut:function(self){
+        this.getEle(self);
         clearTimeout(this.timer);
         clearInterval(this.timer2);
         this.$detailList.html("");
@@ -99,13 +101,9 @@ DetailSmall.prototype = {
         }, 2000);
     },
 };
+
+
 var fn = new DetailSmall();
-function detailSmall(type,self){
-    fn.getEle(self);
-    if(type === "in"){
-        fn.typeIn();
-    }
-    else if(type === "out"){
-        fn.typeOut();
-    };
+function detailSmall(){
+    return fn;
 };

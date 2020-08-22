@@ -43,9 +43,9 @@ function foreshowAct (){
     // detailSmall详情图
     $(".foreshow_list a").hover(function(){
         // 移入触发
-        detailSmall("in",this);
+        detailSmall().typeIn(this);
     },function(){
         // 移出触发
-        detailSmall("out",this);
+        detailSmall().typeOut(this);
     });
 };
